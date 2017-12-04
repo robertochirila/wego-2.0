@@ -7,7 +7,7 @@ import Home from '../ui/Home';
 import TasksFeed from '../ui/TasksFeed';
 import YourProfile from '../ui/YourProfile';
 import YourStats from '../ui/YourStats';
-import Tasks from '../ui/Tasks';
+import AddTasks from '../ui/AddTasks';
 
 export const routes = (
     <BrowserRouter>
@@ -18,7 +18,7 @@ export const routes = (
             <Route exact path={'/tasksfeed'} component={TasksFeed}/>
             <Route exact path={'/yourprofile'} component={YourProfile}/>
             <Route exact path={'/yourstats'} component={YourStats}/>
-            <Route exact path={'/tasks'} component={Tasks}/>
+            <Route exact path={'/tasks'} component={AddTasks}/>
         </Switch>
     </BrowserRouter>
 );
