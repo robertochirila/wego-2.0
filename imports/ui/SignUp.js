@@ -14,6 +14,8 @@ export default class SignUp extends React.Component {
         e.preventDefault();
         let email = this.refs.email.value.trim();
         let password = this.refs.password.value.trim();
+        console.log(password);
+        console.log(email);
         if (password.length > 5) {
             Accounts.createUser({email, password}, (err) => {
                 console.log("Create Account attempt!");
@@ -25,6 +27,7 @@ export default class SignUp extends React.Component {
                     this.setState({
                         error: ""
                     });
+                    this.props.history.push('/home');
                 }
             });
         } else {
