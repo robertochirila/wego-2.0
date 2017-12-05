@@ -1,13 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="f8c83e51-b9b6-4aac-9f38-8d0382605c68" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/Task.js" afterPath="$PROJECT_DIR$/imports/ui/Task.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/YourProfile.js" afterPath="$PROJECT_DIR$/imports/ui/YourProfile.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/YourStats.js" afterPath="$PROJECT_DIR$/imports/ui/YourStats.js" />
-      <change beforePath="$PROJECT_DIR$/lib/collections.js" afterPath="$PROJECT_DIR$/lib/collections.js" />
-    </list>
+    <list default="true" id="f8c83e51-b9b6-4aac-9f38-8d0382605c68" name="Default" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -269,7 +263,7 @@
       <workItem from="1512370502714" duration="6495000" />
       <workItem from="1512408042627" duration="11972000" />
       <workItem from="1512425093445" duration="1833000" />
-      <workItem from="1512457727128" duration="12187000" />
+      <workItem from="1512457727128" duration="12261000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the server on start up.">
       <created>1512244686225</created>
@@ -282,7 +276,7 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="46521000" />
+    <option name="totallyTimeSpent" value="46595000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="3840" height="2129" extended-state="6" />
