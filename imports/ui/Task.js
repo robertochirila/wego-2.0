@@ -1,5 +1,6 @@
 import React from 'react';
 import DetailTask from './DetailTask';
+import {Meteor} from "meteor/meteor";
 
 
 export default class Task extends React.Component {
@@ -42,11 +43,13 @@ export default class Task extends React.Component {
     }
 
     finishTask() {
+        Meteor.subscribe('stats');
         console.log('Here you will finish the task manually');
         Meteor.call('tasks.finished', this.props.task._id);
         this.setState({
             finishMessage: " Nailed it ! "
         });
+        Meteor.call('stats.insert', Meteor.userId(),this.props.task._id);
         // first it should update the finished field in the db
     }
 
