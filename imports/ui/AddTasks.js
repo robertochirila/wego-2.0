@@ -36,8 +36,6 @@ export default class AddTasks extends React.Component {
         e.preventDefault();
         const taskName = this.refs.taskName.value.trim();
         const duration = Number(this.refs.duration.value.trim());
-        /*console.log(taskName);
-        console.log(duration);*/
         if ((taskName && duration) !== "") {
             Meteor.call('tasks.insert', taskName, duration)
         } else {
@@ -45,20 +43,6 @@ export default class AddTasks extends React.Component {
                 error: "Values shouldn't be null !"
             })
         }
-        // checks if the user is logged in
-        /*if (Meteor.userId()) {
-            tasks.insert({
-                userId: Meteor.userId(),
-                taskName: taskName,
-                duration: duration
-            });
-            console.log(tasks.find().fetch());
-        } else {
-            // otherwise it prints this error message
-            this.setState({
-                error: "You haven't logged in !"
-            });
-        }*/
         this.refs.taskName.value = '';
         this.refs.duration.value = '';
     }
