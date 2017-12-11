@@ -33,6 +33,7 @@ export default class Task extends React.Component {
                     let start = moment.utc(now, "HH:mm:ss");
                     let end = moment.utc(finishTime, "HH:mm:ss");
                     let duration = moment.duration(end.diff(start));
+                    console.log(end.diff(start));
                     hoursSpan.innerHTML = (duration.hours());
                     minutesSpan.innerHTML = (duration.minutes());
                     secondsSpan.innerHTML = (duration.seconds());
@@ -83,7 +84,12 @@ export default class Task extends React.Component {
         this.setState({
             finishMessage: " Nailed it ! "
         });
-        Meteor.call('stats.insert', Meteor.userId(), this.props.task._id);
+        if (stats.find().count() === 0) {
+            Meteor.call('stats.insert', Meteor.userId(), this.props.task._id);
+        } else {
+            console.log('Stats update here!');
+            Meteor.call('stats.update', Meteor.userId(), this.props.task._id);
+        }
         // first it should update the finished field in the db
     }
 
@@ -91,7 +97,7 @@ export default class Task extends React.Component {
         return (
             <div key={this.props.task._id} className="card">
                 <div className="photo">
-                <p>Here the photo of the task will be.</p>
+                    <p>Here the photo of the task will be.</p>
                 </div>
                 <h3>Task Name: {this.props.task.taskName}</h3>
                 <h3>Duration: {this.props.task.duration}</h3>
