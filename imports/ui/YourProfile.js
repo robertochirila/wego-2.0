@@ -12,32 +12,36 @@ export default class YourProfile extends React.Component {
         // if so, it retrieves all the values from the collection
         // and updates the text fields
         Tracker.autorun(() => {
-            Meteor.subscribe('profiles');
+            Meteor.subscribe('myprofile');
             $('#submitButton').css('display', 'none');
-            if (profiles.find().count() > 0) {
-                myCursor = profiles.findOne({userId: Meteor.userId()});
+            if (myprofile.find().count() > 0) {
+                console.log('You have a profile in the db!');
+                let myCursor = myprofile.findOne({userId: Meteor.userId()});
                 let username = myCursor.name;
-                let aboutYou = myCursor.aboutYou;
+                let bio = myCursor.bio;
                 let gender = myCursor.gender;
                 let age = myCursor.age;
-                let education = myCursor.education;
+                let reputation = myCursor.reputation;
                 let quote = myCursor.quote;
+                let status = myCursor.status;
                 this.refs.name.value = username;
-                this.refs.aboutYou.value = aboutYou;
+                this.refs.bio.value = bio;
                 this.refs.gender.value = gender;
                 this.refs.age.value = age;
-                this.refs.education.value = education;
+                this.refs.reputation.value = reputation;
                 this.refs.quote.value = quote;
+                this.refs.status.value = status;
             } else {
                 // if no records were found in the db
                 // all the text fields values are updated to
                 // " It's pretty empty here "
                 this.refs.name.value = "It's pretty empty here...";
-                this.refs.aboutYou.value = "It's pretty empty here...";
+                this.refs.bio.value = "It's pretty empty here...";
                 this.refs.gender.value = "It's pretty empty here...";
                 this.refs.age.value = "It's pretty empty here...";
-                this.refs.education.value = "It's pretty empty here...";
+                this.refs.reputation.value = "It's pretty empty here...";
                 this.refs.quote.value = "It's pretty empty here...";
+                this.refs.status.value = "It's pretty empty here...";
             }
         });
     }
@@ -55,18 +59,20 @@ export default class YourProfile extends React.Component {
         e.preventDefault();
         let profileInfo = [];
         const name = this.refs.name.value;
-        const aboutYou = this.refs.aboutYou.value;
+        const bio = this.refs.bio.value;
         const gender = this.refs.gender.value;
         const age = this.refs.age.value;
-        const education = this.refs.education.value;
+        const reputation = this.refs.reputation.value;
         const quote = this.refs.quote.value;
-        profileInfo.push(name, aboutYou, gender, age, education, quote);
+        const status = this.refs.status.value;
+        profileInfo.push(name, bio, gender, age, reputation, quote, status);
         //console.log("submit form");
         //console.log(profileInfo);
-        if (profiles.find().count() > 0) {
-            Meteor.call('profiles.update', Meteor.userId(), profileInfo);
+        if (myprofile.find().count() > 0) {
+            Meteor.call('myprofile.update', Meteor.userId(), profileInfo);
         } else {
-            Meteor.call('profiles.insert', Meteor.userId(), profileInfo);
+            console.log("My profile insert");
+            Meteor.call('myprofile.insert', Meteor.userId(), profileInfo);
         }
         $('#editButton').css('display', 'inline');
     }
@@ -83,11 +89,12 @@ export default class YourProfile extends React.Component {
                         <button id={"editButton"} onClick={this.onEdit.bind(this)}>Edit</button>
                         <button id={"submitButton"}>Submit</button>
                         <input type={"text"} ref={"name"} placeholder={"Your Name"}/>
-                        <input type={"text"} ref={"aboutYou"} placeholder={"About You"}/>
+                        <input type={"text"} ref={"bio"} placeholder={"Bio"}/>
                         <input type={"text"} ref={"gender"} placeholder={"Your Gender"}/>
                         <input type={"text"} ref={"age"} placeholder={"Your Age"}/>
-                        <input type={"text"} ref={"education"} placeholder={"Your Education"}/>
+                        <input type={"text"} ref={"reputation"} placeholder={"Your Reputation"}/>
                         <input type={"text"} ref={"quote"} placeholder={"Your Quote"}/>
+                        <input type={"text"} ref={"status"} placeholder={"Status..."}/>
                     </form>
                 </div>
             </div>

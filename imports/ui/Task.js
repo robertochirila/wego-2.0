@@ -18,7 +18,7 @@ export default class Task extends React.Component {
 
     componentDidMount() {
         Tracker.autorun(() => {
-            let myCursor = tasks.findOne({_id: this.props.task._id});
+            let myCursor = mytasks.findOne({_id: this.props.task._id});
             let taskId = this.props.task._id;
             let started = myCursor.started;
             let hoursSpan = this.refs.hours;
@@ -58,7 +58,7 @@ export default class Task extends React.Component {
     removeTask(e) {
         const taskId = this.props.task._id;
         //console.log(taskId);
-        Meteor.call('tasks.remove', taskId);
+        Meteor.call('mytasks.remove', taskId);
     }
 
     startTask(e) {
@@ -68,10 +68,10 @@ export default class Task extends React.Component {
         // converts the duration to hours
         // and starts the countdown which will be provided
         // as an external file
-        let myCursor = tasks.findOne({_id: this.props.task._id});
+        let myCursor = mytasks.findOne({_id: this.props.task._id});
         let duration = myCursor.duration;
         console.log('Now the task should start');
-        Meteor.call('tasks.started', this.props.task._id, duration);
+        Meteor.call('mytasks.started', this.props.task._id, duration);
         this.setState({
             startMessage: " Keep yourself productive. Don't forget, we are what we repeat ! "
         });
@@ -80,15 +80,15 @@ export default class Task extends React.Component {
     finishTask() {
         Meteor.subscribe('stats');
         console.log('Here you will finish the task manually');
-        Meteor.call('tasks.finished', this.props.task._id);
+        Meteor.call('mytasks.finished', this.props.task._id);
         this.setState({
             finishMessage: " Nailed it ! "
         });
-        if (stats.find().count() === 0) {
-            Meteor.call('stats.insert', Meteor.userId(), this.props.task._id);
-        } else {
+        if (stats.find().count() > 0) {
             console.log('Stats update here!');
             Meteor.call('stats.update', Meteor.userId(), this.props.task._id);
+        } else {
+            Meteor.call('stats.insert', Meteor.userId(), this.props.task._id);
         }
         // first it should update the finished field in the db
     }

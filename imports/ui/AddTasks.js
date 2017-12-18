@@ -19,10 +19,10 @@ export default class AddTasks extends React.Component {
 
     componentDidMount() {
         Tracker.autorun(() => {
-            Meteor.subscribe('tasks');
+            Meteor.subscribe('mytasks');
             // when the component is mounted I retrieve all the tasks from the database and update the state of tasksArray
             console.log("Component is mounted !");
-            const myTasks = tasks.find().fetch();
+            const myTasks = mytasks.find().fetch();
             this.setState({
                 tasksArray: myTasks
             });
@@ -37,7 +37,7 @@ export default class AddTasks extends React.Component {
         const taskName = this.refs.taskName.value.trim();
         const duration = Number(this.refs.duration.value.trim());
         if ((taskName && duration) !== "") {
-            Meteor.call('tasks.insert', taskName, duration)
+            Meteor.call('mytasks.insert', taskName, duration)
         } else {
             this.setState({
                 error: "Values shouldn't be null !"

@@ -22,30 +22,36 @@ export default class YourStats extends React.Component {
             console.log(stats.find().count());
             if (stats.find().count() > 0) {
                 console.log("You have a stats collection");
-                myCursor = stats.findOne({userId: Meteor.userId()});
-                this.refs.creativity.value = myCursor.creativity;
-                this.refs.analytics.value = myCursor.analytics;
-                this.refs.fitness.value = myCursor.fitness;
-                this.refs.research.value = myCursor.research;
-                this.refs.communication.value = myCursor.communication;
-                this.refs.problemsolving.value = myCursor.selfmotivation;
-                this.refs.timemanagement.value = myCursor.teamwork;
-                this.refs.leadership.value = myCursor.leadership;
-                this.refs.selfmotivation.value = myCursor.timemanagement;
-                this.refs.teamwork.value = myCursor.problemsolving;
+                let myCursor = stats.findOne({userId: Meteor.userId()});
+                this.refs.creativity.value = myCursor.skills.creativity;
+                this.refs.fitness.value = myCursor.skills.fitness;
+                this.refs.communication.value = myCursor.skills.communication;
+                this.refs.problemSolving.value = myCursor.skills.problemSolving;
+                this.refs.selfControl.value = myCursor.skills.selfControl;
+                this.refs.selfDiscipline.value = myCursor.skills.selfDiscipline;
+                this.refs.selfEducation.value = myCursor.skills.selfEducation;
+                this.refs.leadership.value = myCursor.skills.leadership;
+                this.refs.research.value = myCursor.skills.research;
+                this.refs.teamwork.value = myCursor.skills.teamwork;
+                this.refs.dopamineRush.value = myCursor.healthIndicators.dopamineRush;
+                this.refs.willpower.value = myCursor.healthIndicators.willpower;
+                this.refs.comfortZone.value = myCursor.healthIndicators.comfortZone;
             } else {
                 // if no records then all the fields are set to 0
                 console.log("No records in the stats db");
                 this.refs.creativity.value = "0";
-                this.refs.analytics.value = "0";
-                this.refs.fitness.value = "0";
-                this.refs.research.value = "0";
                 this.refs.communication.value = "0";
-                this.refs.problemsolving.value = "0";
-                this.refs.timemanagement.value = "0";
+                this.refs.fitness.value = "0";
+                this.refs.problemSolving.value = "0";
+                this.refs.selfControl.value = "0";
+                this.refs.selfDiscipline.value = "0";
+                this.refs.selfEducation.value = "0";
                 this.refs.leadership.value = "0";
-                this.refs.selfmotivation.value = "0";
+                this.refs.research.value = "0";
                 this.refs.teamwork.value = "0";
+                this.refs.dopamineRush.value = "0";
+                this.refs.willpower.value = "0";
+                this.refs.comfortZone.value = "0";
             }
         });
 
@@ -59,15 +65,18 @@ export default class YourStats extends React.Component {
                 <p>This is the Stats component.</p>
                 <form>
                     <input type={"text"} ref={"creativity"} placeholder={""}/>
-                    <input type={"text"} ref={"analytics"} placeholder={""}/>
                     <input type={"text"} ref={"fitness"} placeholder={""}/>
-                    <input type={"text"} ref={"research"} placeholder={""}/>
                     <input type={"text"} ref={"communication"} placeholder={""}/>
-                    <input type={"text"} ref={"problemsolving"} placeholder={""}/>
-                    <input type={"text"} ref={"timemanagement"} placeholder={""}/>
-                    <input type={"text"} ref={"leadership"} placeholder={""}/>
-                    <input type={"text"} ref={"selfmotivation"} placeholder={""}/>
+                    <input type={"text"} ref={"problemSolving"} placeholder={""}/>
+                    <input type={"text"} ref={"selfDiscipline"} placeholder={""}/>
+                    <input type={"text"} ref={"selfControl"} placeholder={""}/>
+                    <input type={"text"} ref={"selfEducation"} placeholder={""}/>
                     <input type={"text"} ref={"teamwork"} placeholder={""}/>
+                    <input type={"text"} ref={"leadership"} placeholder={""}/>
+                    <input type={"text"} ref={"research"} placeholder={""}/>
+                    <input type={"text"} ref={"dopamineRush"} placeholder={""}/>
+                    <input type={"text"} ref={"willpower"} placeholder={""}/>
+                    <input type={"text"} ref={"comfortZone"} placeholder={""}/>
                 </form>
             </div>
         );
