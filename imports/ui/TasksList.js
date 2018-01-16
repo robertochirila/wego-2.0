@@ -14,7 +14,7 @@ export default class TasksList extends React.Component {
                 </div>
             )
         } else {
-            // otherwise it accesses the prop and maps all its content
+            // otherwise it accesses the props and maps all its content
             // then it returns for each task object a Task component
             return this.props.tasks.map(function (task) {
                 return <Task key={task._id} task={task}/>

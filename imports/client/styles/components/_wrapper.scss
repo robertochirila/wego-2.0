@@ -1,0 +1,24 @@
+.wrapper-login {
+  max-width: 100rem;
+  padding: 2.0rem;
+  margin: 10%;
+  background: $turquoise;
+  color: white;
+  border-radius: 10%;
+  box-shadow: 5px 5px #e74c3c;
+}
+
+.wrapper-login form {
+  width: 100%;
+}
+
+.wrapper-login a {
+  margin-top: 10px;
+  color: white;
+}
+
+.wrapper-centered {
+  width: 75%;
+  margin-left: 15%;
+  text-align: center;
+}

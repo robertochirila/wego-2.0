@@ -10,6 +10,9 @@ export default class Login extends React.Component {
         }
     }
 
+    componentDidMount() {
+    }
+
     onSubmit(e) {
         e.preventDefault();
         let email = this.refs.email.value.trim();
@@ -31,16 +34,27 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="container">
-                <form onSubmit={this.onSubmit.bind(this)} noValidate>
-                    <label>Email</label>
-                    <input className="validation" type={"email"} ref={"email"} placeholder={"Fill in email"}/>
-                    <label>Password</label>
-                    <input className="validation" type={"password"} ref={"password"} placeholder={""}/>
-                    <button>Login</button>
-                    <Link to="/signup">Don't have an account?</Link>
-                    {this.state.error ? <p>{this.state.error}</p> : undefined}
-                </form>
+            <div className="login-background">
+                <div className="login-form">
+                    <div className="wrapper-login">
+                        <form onSubmit={this.onSubmit.bind(this)} noValidate>
+                            <div className="field">
+                                <label>Email</label>
+                                <input className="validation" type={"email"} ref={"email"}
+                                       placeholder={"Fill in email"}/>
+                            </div>
+                            <div className="field">
+                                <label>Password</label>
+                                <input className="validation" type={"password"} ref={"password"} placeholder={""}/>
+                            </div>
+                            <div className="wrapper-centered">
+                                <button className="button-login">Login</button>
+                            </div>
+                            <Link to="/signup">Don't have an account?</Link>
+                            {this.state.error ? <p>{this.state.error}</p> : undefined}
+                        </form>
+                    </div>
+                </div>
             </div>
         );
     }

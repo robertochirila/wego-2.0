@@ -16,8 +16,13 @@ export default class Home extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <p>This is the Home component.</p>
-                <button onClick={this.onLogout.bind(this)}>Logout</button>
+                <div className="container">
+                    <div className="home-page">
+                        <p>This is the Home component.</p>
+                        <button type="button" className="btn btn-danger" onClick={this.onLogout.bind(this)}>Logout
+                        </button>
+                    </div>
+                </div>
             </div>
         );
     }

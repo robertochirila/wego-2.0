@@ -8,6 +8,7 @@ import TasksFeed from '../ui/TasksFeed';
 import YourProfile from '../ui/YourProfile';
 import YourStats from '../ui/YourStats';
 import AddTasks from '../ui/AddTasks';
+import ProjectsList from '../ui/ProjectsList';
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
@@ -57,6 +58,8 @@ export const routes = (
             <Route exact path={'/yourprofile'} component={YourProfile} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/yourstats'} component={YourStats} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/tasks'} component={AddTasks} onEnter={onEnterPrivatePage()}/>
+            <Route exact path={'/projects'} component={ProjectsList} onEnter={onEnterPrivatePage()}/>
+
         </Switch>
     </BrowserRouter>
 );

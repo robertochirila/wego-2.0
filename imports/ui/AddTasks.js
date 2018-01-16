@@ -60,6 +60,7 @@ export default class AddTasks extends React.Component {
                     <button>Submit Task</button>
                 </form>
                 <TasksList tasks={this.state.tasksArray}/>
+
             </div>
         );
     }
