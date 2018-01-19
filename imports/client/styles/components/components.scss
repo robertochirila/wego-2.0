@@ -1,0 +1,378 @@
+
+.clearfix {
+  zoom: 1;
+}
+
+.clearfix:after {
+  content: '';
+  clear: both;
+  display: block;
+  height: 0;
+  visibility: hidden;
+}
+
+* {
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+/* fonts
+
+ font-family: 'Open Sans Condensed', sans-serif;
+ font-family: 'Lato', Helvetica, sans-serif;
+ /*font-family: 'Lato', Helvetica, sans-serif;*/
+/*font-family: 'Kavivanar', cursive;*/
+/*font-family: 'Open Sans Condensed', sans-serif;*/
+/*font-family: 'Sedgwick Ave Display', cursive;
+font-family: 'Joti One', cursive;*/
+
+/* colors:
+
+NavBar color:#002171
+
+
+
+ */
+
+/* Box */
+
+.box {
+  width: 90%;
+  margin-left: 5%;
+  text-align: center;
+  height: 100%;
+}
+
+.colored {
+  background-color: #1976d2;
+  border-radius: 30px;
+  box-shadow: 5px 5px #e91e63;
+  margin-bottom: 20px;
+
+}
+
+.box.colored h1,
+.box.colored h2,
+.box.colored h3,
+.box.colored h4,
+.box.colored p {
+  color: white;
+}
+
+h4 {
+  font-weight: lighter;
+}
+
+/* Header*/
+
+header {
+  /*background-color: red;*/
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 10vh;
+}
+
+/* NavBar */
+
+nav {
+  height: 10vh;
+}
+
+.navBar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /*background-color: rgba(244, 81, 30, 0.9);*/
+  /*background-color: rgba(25, 118, 210, 0.9);*/
+  background-color: rgba(49, 27, 146, 0.9);
+  /*background-color: rgba(0, 33, 113, 0.9);*/
+  box-shadow: 0 1px 5px black;
+  border-radius: 25px;
+}
+
+.main-nav {
+  float: right;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.main-nav li {
+  cursor: pointer;
+  display: inline-block;
+  margin: 20px 20px;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.main-nav li a:link,
+.main-nav li a:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.main-nav li a:hover,
+.main-nav li a:active {
+  border-bottom: 2px solid;
+}
+
+/* Buttons */
+.button-list {
+  list-style: none;
+  margin: 10px 5px;
+}
+
+.button-list li {
+  display: inline-block;
+  text-decoration: none;
+}
+
+.btn {
+  text-transform: uppercase;
+  font-family: 'Joti One', cursive;
+  letter-spacing: 1px;
+  cursor: pointer;
+  font-weight: bold;
+  color: white;
+  display: inline-block;
+  margin: 10px 5px;
+  padding: 15px 25px;
+  border-bottom: 2px transparent;
+  border-radius: 10px;
+  transition: color 0.5s, background-color 0.5s, border-bottom 0.5s;
+}
+
+.edit {
+  background-color: #00c853;
+  border-bottom: 2px solid;
+}
+
+.edit:hover,
+.edit:link {
+  color: black;
+  background-color: white;
+  transform: scale(1.02);
+}
+
+.submit {
+  background-color: #2962ff;
+  border-bottom: 2px solid;
+}
+
+.submit:hover,
+.submit:link {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+
+}
+
+.remove {
+  background-color: #c2185b;
+  border-bottom: 2px solid;
+}
+
+.remove:hover,
+.remove:link {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.start {
+  background-color: #1565c0;
+  border-bottom: 2px solid;
+}
+
+.start:hover,
+.start:link {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.finish {
+  background-color: #009688;
+  border-bottom: 2px solid;
+}
+
+.finish:hover,
+.finish:link {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.enrol {
+  /*background-color: #4fc3f7;*/
+  background-color: rgba(0, 33, 113, 1);
+  border-bottom: 2px solid;
+}
+
+.enrol:hover,
+.enrol:link {
+  /*background-color: #b0e4fb;*/
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.view {
+  background-color: #f57f17;
+  border-bottom: 2px solid;
+}
+
+.view:hover,
+.view:link {
+  background-color: white;
+  color: black;
+  transform: scale(1.02);
+}
+
+.login {
+  width: 90%;
+  margin-left: 5%;
+  background-color: #2962ff;
+  border-bottom: 2px solid;
+}
+
+.login:hover,
+.login:link {
+  background-color: white;
+  color: black;
+}
+
+.signup {
+  width: 90%;
+  margin-left: 5%;
+  background-color: #c2185b;
+  border-bottom: 2px solid;
+}
+
+.signup:hover,
+.signup:link {
+  background-color: white;
+  color: black;
+}
+
+/* Forms */
+
+a {
+  text-decoration: none;
+  text-transform: uppercase;
+  font-family: 'Joti One', cursive;
+}
+
+form {
+  /*position: absolute;
+  top: 400%;
+  left: 25%;*/
+  background-color: #0097a7;
+  width: 40%;
+  margin-left: 30%;
+  border-radius: 20px;
+  box-shadow: 5px 7px #e74c3c;
+  /* rgba(0, 16, 100, 1); */
+}
+
+label {
+  font-family: 'Joti One', cursive;
+  float: left;
+  color: white;
+  font-weight: bold;
+  margin: 7% 7%;
+}
+
+input {
+  font-family: 'Joti One', cursive;
+  box-sizing: border-box;
+  font-size: 100%;
+  font-weight: bold;
+  padding: 15px 8px;
+  width: 90%;
+  margin-left: 5%;
+  /*width: 60%;
+  margin-left: 30%;*/
+  margin-bottom: 10px;
+  border-radius: 5px;
+}
+
+form .signup {
+  margin-bottom: 60px;
+}
+
+/* Task Card */
+
+.task-card {
+  background-color: #0097a7;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 5px 5px #e91e63;
+}
+
+.task-description h3 {
+  color: white;
+}
+
+.task-countdown h5,
+.task-countdown span {
+  color: white;
+}
+
+.task-buttons-list {
+  list-style: none;
+}
+
+.task-buttons-list li button {
+  width: 90%;
+  margin-left: 5%;
+}
+
+.task-photo-figure {
+  width: 98%;
+  margin-left: 1%;
+}
+
+.round-photo {
+  margin-top: 5%;
+  border-radius: 25%;
+}
+
+/* Project card */
+
+.project-photo-figure {
+  width: 98%;
+  margin-left: 1%;
+}
+
+.project-card {
+  background-color: #0097a7;
+  border-radius: 20px;
+  width: 90%;
+  margin-left: 5%;
+  box-shadow: 5px 5px #e91e63;
+}
+
+.project-description h5 {
+  color: white;
+}
+
+.project-button button {
+  width: 90%;
+  margin-left: 5%;
+}
+
+/* Profile Card */
+
+.profile-photo-figure {
+  width: 98%;
+  margin-left: 1%;
+}
+

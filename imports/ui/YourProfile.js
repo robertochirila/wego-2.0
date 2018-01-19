@@ -15,6 +15,7 @@ export default class YourProfile extends React.Component {
             Meteor.subscribe('myprofile');
             $('#submitButton').css('display', 'none');
             if (myprofile.find().count() > 0) {
+                $('form').css('display', 'none');
                 console.log('You have a profile in the db!');
                 let myCursor = myprofile.findOne({userId: Meteor.userId()});
                 let username = myCursor.name;
@@ -24,6 +25,12 @@ export default class YourProfile extends React.Component {
                 let reputation = myCursor.reputation;
                 let quote = myCursor.quote;
                 let status = myCursor.status;
+                $("#name").text(username);
+                $("#gender").text(gender);
+                $("#age").text(age);
+                $("#quote").text(quote);
+                $("#reputation").text(reputation);
+                $("#status").text(status);
                 this.refs.name.value = username;
                 this.refs.bio.value = bio;
                 this.refs.gender.value = gender;
@@ -81,21 +88,60 @@ export default class YourProfile extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <p>This is the Profile component.</p>
-                <div>
-                    <p>Here the profile photo should be displayed.</p>
-                    <p>Here the reputation should be displayed.</p>
-                    <form onSubmit={this.onSubmit.bind(this)}>
-                        <button id={"editButton"} onClick={this.onEdit.bind(this)}>Edit</button>
-                        <button id={"submitButton"}>Submit</button>
-                        <input type={"text"} ref={"name"} placeholder={"Your Name"}/>
-                        <input type={"text"} ref={"bio"} placeholder={"Bio"}/>
-                        <input type={"text"} ref={"gender"} placeholder={"Your Gender"}/>
-                        <input type={"text"} ref={"age"} placeholder={"Your Age"}/>
-                        <input type={"text"} ref={"reputation"} placeholder={"Your Reputation"}/>
-                        <input type={"text"} ref={"quote"} placeholder={"Your Quote"}/>
-                        <input type={"text"} ref={"status"} placeholder={"Status..."}/>
-                    </form>
+                <div className="container">
+                    <div className="row">
+                        <div className="box colored">
+                            <form onSubmit={this.onSubmit.bind(this)} id={"form"}>
+                                <button id={"editButton"} className="btn edit" onClick={this.onEdit.bind(this)}>Edit
+                                </button>
+                                <button id={"submitButton"}>Submit</button>
+                                <input type={"text"} ref={"name"} placeholder={"Your Name"}/>
+                                <input type={"text"} ref={"bio"} placeholder={"Bio"}/>
+                                <input type={"text"} ref={"gender"} placeholder={"Your Gender"}/>
+                                <input type={"text"} ref={"age"} placeholder={"Your Age"}/>
+                                <input type={"text"} ref={"reputation"} placeholder={"Your Reputation"}/>
+                                <input type={"text"} ref={"quote"} placeholder={"Your Quote"}/>
+                                <input type={"text"} ref={"status"} placeholder={"Status..."}/>
+                            </form>
+                            <div className="box">
+                                <h1>Profile Section</h1>
+                                <figure className="profile-photo-figure">
+                                    <img src="../../img/icon.png" className="round-photo"/>
+                                </figure>
+                                <button className="btn edit">Edit Profile</button>
+                                <h2>Roberto Chirila</h2>
+                                <p>Nunquam demitto clinias. The source meets emptiness which is not brilliant.</p>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <h3>Name</h3>
+                                        <span id={"name"}>Value</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h3>Gender</h3>
+                                        <span id={"gender"}>Value</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h3>Age</h3>
+                                        <span id={"age"}>Value</span>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col-4">
+                                        <h3>Quote</h3>
+                                        <span id={"quote"}>Value</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h3>Reputation</h3>
+                                        <span id={"reputation"}>Value</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h3>Status</h3>
+                                        <span id={"status"}>Value</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         );

@@ -34,24 +34,30 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className="login-background">
-                <div className="login-form">
-                    <div className="wrapper-login">
-                        <form onSubmit={this.onSubmit.bind(this)} noValidate>
-                            <div className="field">
+            <div className='container'>
+                <div className='row'>
+                    <div className='box'>
+                        <h3>Login Form</h3>
+                        <form onSubmit={this.onSubmit.bind(this)}>
+                            <div className="row">
                                 <label>Email</label>
-                                <input className="validation" type={"email"} ref={"email"}
-                                       placeholder={"Fill in email"}/>
                             </div>
-                            <div className="field">
+                            <div className="row">
+                                <input type={"email"} ref={"email"} placeholder={"Email Address"}/>
+                            </div>
+                            <div className="row">
                                 <label>Password</label>
-                                <input className="validation" type={"password"} ref={"password"} placeholder={""}/>
                             </div>
-                            <div className="wrapper-centered">
-                                <button className="button-login">Login</button>
+                            <div className='row'>
+                                <input type={"password"} ref={"password"} placeholder={"Password"}/>
                             </div>
-                            <Link to="/signup">Don't have an account?</Link>
-                            {this.state.error ? <p>{this.state.error}</p> : undefined}
+                            <div className='row'>
+                                <button className="btn login">Login</button>
+                            </div>
+                            <div className='row'>
+                                <a className="btn signup"><Link to="/signup">Sign Up</Link></a>
+                                {this.state.error ? <p>{this.state.error}</p> : undefined}
+                            </div>
                         </form>
                     </div>
                 </div>
