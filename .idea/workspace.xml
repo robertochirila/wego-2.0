@@ -3,11 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="f8c83e51-b9b6-4aac-9f38-8d0382605c68" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/imports/client/styles/components/components.scss" afterPath="$PROJECT_DIR$/imports/client/styles/components/components.scss" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/AddTasks.js" afterPath="$PROJECT_DIR$/imports/ui/AddTasks.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/Projects.js" afterPath="$PROJECT_DIR$/imports/ui/Projects.js" />
       <change beforePath="$PROJECT_DIR$/imports/ui/Task.js" afterPath="$PROJECT_DIR$/imports/ui/Task.js" />
-      <change beforePath="$PROJECT_DIR$/imports/ui/YourProfile.js" afterPath="$PROJECT_DIR$/imports/ui/YourProfile.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -36,8 +32,8 @@
           <file leaf-file-name="YourProfile.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/imports/ui/YourProfile.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="780">
-                  <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
+                <state relative-caret-position="1101">
+                  <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
                   <folding />
                 </state>
               </provider>
@@ -70,18 +66,18 @@
           <file leaf-file-name="components.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/imports/client/styles/components/components.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="896">
-                  <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
+                <state relative-caret-position="861">
+                  <caret line="315" column="9" lean-forward="false" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="simple-grid.scss" pinned="false" current-in-tab="true">
+          <file leaf-file-name="simple-grid.scss" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/imports/client/styles/grid/simple-grid.scss">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="600">
-                  <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+                <state relative-caret-position="8220">
+                  <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
                   <folding />
                 </state>
               </provider>
@@ -90,7 +86,7 @@
           <file leaf-file-name="ProjectsList.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/imports/ui/ProjectsList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1316">
+                <state relative-caret-position="960">
                   <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
                   <folding />
                 </state>
@@ -100,17 +96,17 @@
           <file leaf-file-name="AddTasks.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/imports/ui/AddTasks.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="3000">
-                  <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
+                <state relative-caret-position="921">
+                  <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
                   <folding />
                 </state>
               </provider>
             </entry>
           </file>
-          <file leaf-file-name="TasksList.js" pinned="false" current-in-tab="false">
+          <file leaf-file-name="TasksList.js" pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/imports/ui/TasksList.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="561">
+                <state relative-caret-position="900">
                   <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
                   <folding />
                 </state>
@@ -120,8 +116,8 @@
           <file leaf-file-name="Task.js" pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/imports/ui/Task.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="660">
-                  <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+                <state relative-caret-position="900">
+                  <caret line="99" column="47" lean-forward="true" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
                   <folding />
                 </state>
               </provider>
@@ -190,8 +186,8 @@
         <option value="$PROJECT_DIR$/imports/ui/ProjectsList.js" />
         <option value="$PROJECT_DIR$/imports/ui/AddTasks.js" />
         <option value="$PROJECT_DIR$/imports/client/styles/components/components.scss" />
-        <option value="$PROJECT_DIR$/imports/ui/Task.js" />
         <option value="$PROJECT_DIR$/imports/client/styles/grid/simple-grid.scss" />
+        <option value="$PROJECT_DIR$/imports/ui/Task.js" />
       </list>
     </option>
   </component>
@@ -385,7 +381,7 @@
       <workItem from="1516085918271" duration="14581000" />
       <workItem from="1516172581169" duration="2027000" />
       <workItem from="1516365249839" duration="6775000" />
-      <workItem from="1516392414830" duration="2666000" />
+      <workItem from="1516392414830" duration="3285000" />
     </task>
     <task id="LOCAL-00001" summary="Updated the server on start up.">
       <created>1512244686225</created>
@@ -408,11 +404,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516370590789</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Project Card and Task Card design">
+      <created>1516395102528</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1516395102528</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126821000" />
+    <option name="totallyTimeSpent" value="127440000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="31" width="3840" height="2129" extended-state="6" />
@@ -449,7 +452,8 @@
     <MESSAGE value="Updated the server on start up." />
     <MESSAGE value="Login design" />
     <MESSAGE value="Login form and Profile Card" />
-    <option name="LAST_COMMIT_MESSAGE" value="Login form and Profile Card" />
+    <MESSAGE value="Project Card and Task Card design" />
+    <option name="LAST_COMMIT_MESSAGE" value="Project Card and Task Card design" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -740,14 +744,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/ProjectsList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1316">
-          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/imports/routes/routes.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="646">
@@ -772,50 +768,58 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/styles/components/components.scss">
+    <entry file="file://$PROJECT_DIR$/imports/client/styles/grid/simple-grid.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="292" column="19" lean-forward="true" selection-start-line="292" selection-start-column="19" selection-end-line="292" selection-end-column="19" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/AddTasks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3000">
-          <caret line="53" column="25" lean-forward="false" selection-start-line="53" selection-start-column="25" selection-end-line="53" selection-end-column="25" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/ui/TasksList.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="561">
-          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
+        <state relative-caret-position="8220">
+          <caret line="137" column="14" lean-forward="true" selection-start-line="137" selection-start-column="14" selection-end-line="137" selection-end-column="14" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/Task.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="660">
-          <caret line="21" column="45" lean-forward="true" selection-start-line="21" selection-start-column="45" selection-end-line="21" selection-end-column="45" />
+        <state relative-caret-position="900">
+          <caret line="99" column="47" lean-forward="true" selection-start-line="99" selection-start-column="47" selection-end-line="99" selection-end-column="47" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/ProjectsList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="960">
+          <caret line="36" column="14" lean-forward="false" selection-start-line="36" selection-start-column="14" selection-end-line="36" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/client/styles/components/components.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="861">
+          <caret line="315" column="9" lean-forward="false" selection-start-line="315" selection-start-column="9" selection-end-line="315" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/AddTasks.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="921">
+          <caret line="65" column="41" lean-forward="true" selection-start-line="65" selection-start-column="41" selection-end-line="65" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/imports/ui/TasksList.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="900">
+          <caret line="19" column="57" lean-forward="false" selection-start-line="19" selection-start-column="57" selection-end-line="19" selection-end-column="57" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/imports/ui/YourProfile.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="780">
-          <caret line="15" column="54" lean-forward="true" selection-start-line="15" selection-start-column="54" selection-end-line="15" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/imports/client/styles/grid/simple-grid.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="10" column="9" lean-forward="true" selection-start-line="10" selection-start-column="9" selection-end-line="10" selection-end-column="9" />
+        <state relative-caret-position="1101">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
           <folding />
         </state>
       </provider>

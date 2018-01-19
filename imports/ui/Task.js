@@ -95,7 +95,7 @@ export default class Task extends React.Component {
 
     render() {
         return (
-            <div key={this.props.task._id} className="card">
+            <div key={this.props.task._id}>
                 <div className="col-4">
                     <div className="task-card">
                         <div className="box">
