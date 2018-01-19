@@ -58,6 +58,8 @@ export default class YourProfile extends React.Component {
         e.preventDefault();
         $('#editButton').css('display', 'none');
         $('#submitButton').css('display', 'inline');
+        $('#box1').css('display', 'none');
+        $('#form').css('display', 'inline');
         console.log('Here you should be able to edit first profile section!');
     }
 
@@ -103,7 +105,7 @@ export default class YourProfile extends React.Component {
                                 <input type={"text"} ref={"quote"} placeholder={"Your Quote"}/>
                                 <input type={"text"} ref={"status"} placeholder={"Status..."}/>
                             </form>
-                            <div className="box">
+                            <div className="box" id={"box1"}>
                                 <h1>Profile Section</h1>
                                 <figure className="profile-photo-figure">
                                     <img src="../../img/icon.png" className="round-photo"/>

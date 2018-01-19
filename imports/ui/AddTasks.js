@@ -52,15 +52,21 @@ export default class AddTasks extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <p>This is the Tasks component.</p>
-                {this.state.error ? <p>{this.state.error}</p> : undefined}
-                <form onSubmit={this.onSubmit.bind(this)}>
-                    <input type={"text"} ref={"taskName"} placeholder={"Task Name"}/>
-                    <input type={"text"} ref={"duration"} placeholder={"Duration"}/>
-                    <button>Submit Task</button>
-                </form>
-                <TasksList tasks={this.state.tasksArray}/>
-
+                <div className="container">
+                    <div className="box">
+                        {this.state.error ? <p>{this.state.error}</p> : undefined}
+                        <form onSubmit={this.onSubmit.bind(this)}>
+                            <input type={"text"} ref={"taskName"} placeholder={"Task Name"}/>
+                            <input type={"text"} ref={"duration"} placeholder={"Duration"}/>
+                            <button className="btn submit">Submit Task</button>
+                        </form>
+                    </div>
+                </div>
+                <div className="container">
+                    <div className="row">
+                        <TasksList tasks={this.state.tasksArray}/>
+                    </div>
+                </div>
             </div>
         );
     }

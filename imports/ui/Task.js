@@ -96,37 +96,66 @@ export default class Task extends React.Component {
     render() {
         return (
             <div key={this.props.task._id} className="card">
-                <div className="photo">
-                    <p>Here the photo of the task will be.</p>
+                <div className="col-4">
+                    <div className="task-card">
+                        <div className="box">
+                            <div className="task-photo">
+                                <figure className="task-photo-figure">
+                                    <img src="../../img/icon.png" className="round-photo"/>
+                                </figure>
+                            </div>
+                            <div className="task-description">
+                                <h3>{this.props.task.taskName}</h3>
+                                <h3>{this.props.task.duration}</h3>
+                            </div>
+                            <div className="task-buttons">
+                                <ul className="task-buttons-list">
+                                    <li>
+                                        <button className="btn view" onClick={this.detailTask.bind(this)}>View Details
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn start" onClick={this.startTask.bind(this)}>Start Task
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn remove" onClick={this.removeTask.bind(this)}>Remove
+                                            Task
+                                        </button>
+                                    </li>
+                                    <li>
+                                        <button className="btn finish" onClick={this.finishTask.bind(this)}>Finish
+                                            Task
+                                        </button>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div className="task-countdown">
+                                <div className="row">
+                                    <div className="col-4">
+                                        <h5>Hours</h5>
+                                        <span className="hours" ref={"hours"}>2</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h5>Minutes</h5>
+                                        <span className="minutes" ref={"minutes"}>27</span>
+                                    </div>
+                                    <div className="col-4">
+                                        <h5>Seconds</h5>
+                                        <span className="seconds" ref={"seconds"}>3</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {this.state.showComponent ?
+                        <DetailTask id={this.props.task._id} taskName={this.props.task.taskName}/> :
+                        null}
+                    {this.state.startMessage ? <p>{this.state.startMessage}</p> :
+                        null}
+                    {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
+                        null}
                 </div>
-                <h3>Task Name: {this.props.task.taskName}</h3>
-                <h3>Duration: {this.props.task.duration}</h3>
-                <button onClick={this.detailTask.bind(this)} className="button button--detail">View Details</button>
-                <button onClick={this.startTask.bind(this)} className="button button--start">Start Task</button>
-                <button onClick={this.removeTask.bind(this)} className="button button--remove">Remove Task</button>
-                <button onClick={this.finishTask.bind(this)} className="button button--finish">Finish Task</button>
-                <p>Here the countdown will be displayed.</p>
-                <div className="countdown">
-                    <div>
-                        <h5>Hours</h5>
-                        <span className="hours" ref={"hours"}>0</span>
-                    </div>
-                    <div>
-                        <h5>Minutes</h5>
-                        <span className="minutes" ref={"minutes"}>0</span>
-                    </div>
-                    <div>
-                        <h5>Seconds</h5>
-                        <span className="seconds" ref={"seconds"}>0</span>
-                    </div>
-                </div>
-                {this.state.showComponent ?
-                    <DetailTask id={this.props.task._id} taskName={this.props.task.taskName}/> :
-                    null}
-                {this.state.startMessage ? <p>{this.state.startMessage}</p> :
-                    null}
-                {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
-                    null}
             </div>
         );
     }
