@@ -86,10 +86,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  /*background-color: rgba(244, 81, 30, 0.9);*/
-  /*background-color: rgba(25, 118, 210, 0.9);*/
   background-color: rgba(49, 27, 146, 0.9);
-  /*background-color: rgba(0, 33, 113, 0.9);*/
   box-shadow: 0 1px 5px black;
   border-radius: 25px;
 }
@@ -369,6 +366,16 @@ form .signup {
 .project-button button {
   width: 90%;
   margin-left: 5%;
+}
+
+.projectName {
+  color: red;
+}
+
+.eventDay {
+  margin-left: 10%;
+  background-color: black;
+  border-radius: 10px;
 }
 
 /* Profile Card */

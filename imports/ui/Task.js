@@ -33,7 +33,6 @@ export default class Task extends React.Component {
                     let start = moment.utc(now, "HH:mm:ss");
                     let end = moment.utc(finishTime, "HH:mm:ss");
                     let duration = moment.duration(end.diff(start));
-                    console.log(end.diff(start));
                     hoursSpan.innerHTML = (duration.hours());
                     minutesSpan.innerHTML = (duration.minutes());
                     secondsSpan.innerHTML = (duration.seconds());

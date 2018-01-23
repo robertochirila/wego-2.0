@@ -59,7 +59,6 @@ export const routes = (
             <Route exact path={'/yourstats'} component={YourStats} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/tasks'} component={AddTasks} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/projects'} component={ProjectsList} onEnter={onEnterPrivatePage()}/>
-
         </Switch>
     </BrowserRouter>
 );

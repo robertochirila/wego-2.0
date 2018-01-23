@@ -23,16 +23,16 @@ export default class YourStats extends React.Component {
             if (stats.find().count() > 0) {
                 console.log("You have a stats collection");
                 let myCursor = stats.findOne({userId: Meteor.userId()});
-                this.refs.creativity.value = myCursor.skills.creativity;
-                this.refs.fitness.value = myCursor.skills.fitness;
-                this.refs.communication.value = myCursor.skills.communication;
-                this.refs.problemSolving.value = myCursor.skills.problemSolving;
-                this.refs.selfControl.value = myCursor.skills.selfControl;
-                this.refs.selfDiscipline.value = myCursor.skills.selfDiscipline;
-                this.refs.selfEducation.value = myCursor.skills.selfEducation;
-                this.refs.leadership.value = myCursor.skills.leadership;
-                this.refs.research.value = myCursor.skills.research;
-                this.refs.teamwork.value = myCursor.skills.teamwork;
+                this.refs.creativity.value = myCursor.creativity;
+                this.refs.fitness.value = myCursor.fitness;
+                this.refs.communication.value = myCursor.communication;
+                this.refs.problemSolving.value = myCursor.problemSolving;
+                this.refs.selfControl.value = myCursor.selfControl;
+                this.refs.selfDiscipline.value = myCursor.selfDiscipline;
+                this.refs.selfEducation.value = myCursor.selfEducation;
+                this.refs.leadership.value = myCursor.leadership;
+                this.refs.research.value = myCursor.research;
+                this.refs.teamwork.value = myCursor.teamwork;
                 this.refs.dopamineRush.value = myCursor.healthIndicators.dopamineRush;
                 this.refs.willpower.value = myCursor.healthIndicators.willpower;
                 this.refs.comfortZone.value = myCursor.healthIndicators.comfortZone;
