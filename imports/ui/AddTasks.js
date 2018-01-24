@@ -2,6 +2,7 @@ import React from 'react';
 import TasksList from './TasksList';
 import {Meteor} from 'meteor/meteor';
 import NavBar from './NavBar';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // AddTasks component
 
@@ -52,20 +53,36 @@ export default class AddTasks extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <div className="container">
-                    <div className="box">
-                        {this.state.error ? <p>{this.state.error}</p> : undefined}
-                        <form onSubmit={this.onSubmit.bind(this)}>
-                            <input type={"text"} ref={"taskName"} placeholder={"Task Name"}/>
-                            <input type={"text"} ref={"duration"} placeholder={"Duration"}/>
-                            <button className="btn submit">Submit Task</button>
-                        </form>
+                <div className="row">
+                    <div className="col span-2-of-2">
+                        <ReactCSSTransitionGroup transitionName="addTaskAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={1500} transitionEnter={false}
+                                                 transitionLeave={false}>
+                            <div className="box">
+                                {this.state.error ? <p>{this.state.error}</p> : undefined}
+                                <form onSubmit={this.onSubmit.bind(this)}>
+                                    <div className="row">
+                                        <label>Task Name</label>
+                                    </div>
+                                    <div className="row">
+                                        <input type={"text"} ref={"taskName"} placeholder={"Task Name"}/>
+                                    </div>
+                                    <div className={"row"}>
+                                        <label>How many hours?</label>
+                                    </div>
+                                    <div className={"row"}>
+                                        <input type={"text"} ref={"duration"} placeholder={"Duration"}/>
+                                    </div>
+                                    <div className={"row"}>
+                                        <button className="btn submit">Submit Task</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </ReactCSSTransitionGroup>
                     </div>
                 </div>
-                <div className="container">
-                    <div className="row">
-                        <TasksList tasks={this.state.tasksArray}/>
-                    </div>
+                <div className="row">
+                    <TasksList tasks={this.state.tasksArray}/>
                 </div>
             </div>
         );

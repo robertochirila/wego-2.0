@@ -12,31 +12,40 @@ $blue-button: rgba(52, 152, 219, 1);
 $yellow: rgba(241, 196, 15, 1);
 
 html, body {
-  font-family: 'Joti One', cursive;
+  font-family: 'Bangers', cursive;
   font-weight: 400;
   font-size: 20px;
   overflow-x: hidden;
 
 }
 
-h1, h2, h3, h4, p {
-  font-family: 'Joti One', cursive;
+h1, h2, h3, h4 {
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
   color: white;
   margin: 5% 3%;
 }
 
 span {
   margin-top: 5%;
-  font-family: 'Joti One', cursive;
+  font-family: 'Bangers', cursive;
+  letter-spacing: 2px;
   color: #00c853;
   margin-bottom: 30px;
 }
 
+
 @import url('https://fonts.googleapis.com/css?family=Joti+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+
 /*@import './components/_navBar';
 @import './components/_form';
 @import './components/_home';
 @import './components/_wrapper';
 /*@import '../../../node_modules/bulma_scss/bulma';*/
-@import './grid/simple-grid';
+/*@import './grid/simple-grid';*/
+@import './grid/Grid';
+@import './queries/queries';
 @import './components/components';
+@import './components/animations';

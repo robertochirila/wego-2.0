@@ -1,5 +1,6 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 export default class Login extends React.Component {
 
@@ -34,31 +35,39 @@ export default class Login extends React.Component {
 
     render() {
         return (
-            <div className='container'>
+            <div className="header-login">
                 <div className='row'>
-                    <div className='box'>
-                        <h3>Login Form</h3>
-                        <form onSubmit={this.onSubmit.bind(this)}>
-                            <div className="row">
-                                <label>Email</label>
+                    <div className="col span-2-of-2">
+                        <ReactCSSTransitionGroup transitionName="loginAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionEnter={false}
+                                                 transitionLeave={false}>
+                            <div className='box'>
+                                <form onSubmit={this.onSubmit.bind(this)}>
+                                    <div className="row">
+                                        <label>Email</label>
+                                    </div>
+                                    <div className="row">
+                                        <input type={"email"} ref={"email"} placeholder={"Email Address"}/>
+                                    </div>
+                                    <div className="row">
+                                        <label>Password</label>
+                                    </div>
+                                    <div className='row'>
+                                        <input type={"password"} ref={"password"} placeholder={"Password"}/>
+                                    </div>
+                                    <div className='row'>
+                                        <button className="btn login">Login</button>
+                                    </div>
+                                    <div className='row'>
+                                        <a className="btn signup"><Link to="/signup">Sign Up</Link></a>
+                                        {this.state.error ? <p>{this.state.error}</p> : undefined}
+                                    </div>
+                                </form>
                             </div>
-                            <div className="row">
-                                <input type={"email"} ref={"email"} placeholder={"Email Address"}/>
-                            </div>
-                            <div className="row">
-                                <label>Password</label>
-                            </div>
-                            <div className='row'>
-                                <input type={"password"} ref={"password"} placeholder={"Password"}/>
-                            </div>
-                            <div className='row'>
-                                <button className="btn login">Login</button>
-                            </div>
-                            <div className='row'>
-                                <a className="btn signup"><Link to="/signup">Sign Up</Link></a>
-                                {this.state.error ? <p>{this.state.error}</p> : undefined}
-                            </div>
-                        </form>
+                        </ReactCSSTransitionGroup>
+                    </div>
+                    <div className="hero-text-box">
+                        <h1>Wego <br/> Inventing Productive Socialising <br/> Since 2018.</h1>
                     </div>
                 </div>
             </div>

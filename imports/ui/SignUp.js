@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
 export default class SignUp extends React.Component {
@@ -40,13 +41,36 @@ export default class SignUp extends React.Component {
 
     render() {
         return (
-            <div>
-                <form onSubmit={this.onSubmit.bind(this)} noValidate>
-                    <input type={"email"} ref={"email"} placeholder={"Fill in email"}/>
-                    <input type={"password"} ref={"password"} placeholder={""}/>
-                    <button className="btn signup">Sign Up</button>
-                    {this.state.error ? <p>{this.state.error}</p> : undefined}
-                </form>
+            <div className="header-login">
+                <div className="row">
+                    <div className="col span-2-of-2">
+                        <ReactCSSTransitionGroup transitionName="loginAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionEnter={false}
+                                                 transitionLeave={false}>
+                            <form onSubmit={this.onSubmit.bind(this)} noValidate>
+                                <div className="row">
+                                    <label>Email</label>
+                                </div>
+                                <div className="row">
+                                    <input type={"email"} ref={"email"} placeholder={"Fill in email"}/>
+                                </div>
+                                <div className="row">
+                                    <label>Password</label>
+                                </div>
+                                <div className="row">
+                                    <input type={"password"} ref={"password"} placeholder={""}/>
+                                </div>
+                                <div className="row">
+                                    <button className="btn signup">Sign Up</button>
+                                </div>
+                                {this.state.error ? <p>{this.state.error}</p> : undefined}
+                            </form>
+                        </ReactCSSTransitionGroup>
+                    </div>
+                    <div className="hero-text-box">
+                        <h1>Wego <br/> Inventing Productive Socialising <br/> Since 2018</h1>
+                    </div>
+                </div>
             </div>
         );
     }

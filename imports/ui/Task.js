@@ -2,6 +2,7 @@ import React from 'react';
 import DetailTask from './DetailTask';
 import {Meteor} from "meteor/meteor";
 import moment from 'moment';
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 
 
 export default class Task extends React.Component {
@@ -95,58 +96,63 @@ export default class Task extends React.Component {
     render() {
         return (
             <div key={this.props.task._id}>
-                <div className="col-4">
-                    <div className="task-card">
-                        <div className="box">
-                            <div className="task-photo">
-                                <figure className="task-photo-figure">
-                                    <img src="../../img/icon.png" className="round-photo"/>
-                                </figure>
-                            </div>
-                            <div className="task-description">
-                                <h3>{this.props.task.taskName}</h3>
-                                <h3>{this.props.task.duration}</h3>
-                            </div>
-                            <div className="task-buttons">
-                                <ul className="task-buttons-list">
-                                    <li>
-                                        <button className="btn view" onClick={this.detailTask.bind(this)}>View Details
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="btn start" onClick={this.startTask.bind(this)}>Start Task
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="btn remove" onClick={this.removeTask.bind(this)}>Remove
-                                            Task
-                                        </button>
-                                    </li>
-                                    <li>
-                                        <button className="btn finish" onClick={this.finishTask.bind(this)}>Finish
-                                            Task
-                                        </button>
-                                    </li>
-                                </ul>
-                            </div>
-                            <div className="task-countdown">
-                                <div className="row">
-                                    <div className="col-4">
-                                        <h5>Hours</h5>
-                                        <span className="hours" ref={"hours"}>2</span>
-                                    </div>
-                                    <div className="col-4">
-                                        <h5>Minutes</h5>
-                                        <span className="minutes" ref={"minutes"}>27</span>
-                                    </div>
-                                    <div className="col-4">
-                                        <h5>Seconds</h5>
-                                        <span className="seconds" ref={"seconds"}>3</span>
+                <div className="col span-1-of-4">
+                    <ReactCSSTransitionGroup transitionName="taskAnimation" transitionAppear={true}
+                                             transitionAppearTimeout={1500} transitionEnter={false}
+                                             transitionLeave={false}>
+                        <div className="task-card">
+                            <div className="box">
+                                <div className="task-photo">
+                                    <figure className="task-photo-figure">
+                                        <img src="../../img/icon.png" className="round-photo"/>
+                                    </figure>
+                                </div>
+                                <div className="task-description">
+                                    <h3>{this.props.task.taskName}</h3>
+                                    <h3>{this.props.task.duration}</h3>
+                                </div>
+                                <div className="task-buttons">
+                                    <ul className="task-buttons-list">
+                                        <li>
+                                            <button className="btn view" onClick={this.detailTask.bind(this)}>View
+                                                Details
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="btn start" onClick={this.startTask.bind(this)}>Start Task
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="btn remove" onClick={this.removeTask.bind(this)}>Remove
+                                                Task
+                                            </button>
+                                        </li>
+                                        <li>
+                                            <button className="btn finish" onClick={this.finishTask.bind(this)}>Finish
+                                                Task
+                                            </button>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div className="task-countdown">
+                                    <div className="row">
+                                        <div className="col span-1-of-3">
+                                            <h5>Hours</h5>
+                                            <span className="hours" ref={"hours"}>2</span>
+                                        </div>
+                                        <div className="col span-1-of-3">
+                                            <h5>Minutes</h5>
+                                            <span className="minutes" ref={"minutes"}>27</span>
+                                        </div>
+                                        <div className="col span-1-of-3">
+                                            <h5>Seconds</h5>
+                                            <span className="seconds" ref={"seconds"}>3</span>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
+                    </ReactCSSTransitionGroup>
                     {this.state.showComponent ?
                         <DetailTask id={this.props.task._id} taskName={this.props.task.taskName}/> :
                         null}

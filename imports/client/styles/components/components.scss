@@ -19,13 +19,9 @@
 
 /* fonts
 
- font-family: 'Open Sans Condensed', sans-serif;
+ font-family: 'Supermercado One', cursive;
  font-family: 'Lato', Helvetica, sans-serif;
- /*font-family: 'Lato', Helvetica, sans-serif;*/
-/*font-family: 'Kavivanar', cursive;*/
-/*font-family: 'Open Sans Condensed', sans-serif;*/
-/*font-family: 'Sedgwick Ave Display', cursive;
-font-family: 'Joti One', cursive;*/
+ font-family: 'Joti One', cursive;*/
 
 /* colors:
 
@@ -132,7 +128,7 @@ nav {
 
 .btn {
   text-transform: uppercase;
-  font-family: 'Joti One', cursive;
+  font-family: 'Lato', Helvetica, sans-serif;
   letter-spacing: 1px;
   cursor: pointer;
   font-weight: bold;
@@ -263,32 +259,33 @@ nav {
 a {
   text-decoration: none;
   text-transform: uppercase;
-  font-family: 'Joti One', cursive;
+  font-family: 'Lato', Helvetica, sans-serif;
 }
 
 form {
   /*position: absolute;
   top: 400%;
   left: 25%;*/
-  background-color: #0097a7;
-  width: 40%;
-  margin-left: 30%;
+  background-color: rgba(4, 5, 7, 0.3);
+  width: 20%;
+  margin-left: 40%;
+  margin-bottom: 5%;
   border-radius: 20px;
-  box-shadow: 5px 7px #e74c3c;
+  box-shadow: 5px 7px white;
   /* rgba(0, 16, 100, 1); */
 }
 
 label {
-  font-family: 'Joti One', cursive;
+  font-family: 'Lato', Helvetica, sans-serif;
   float: left;
   color: white;
   font-weight: bold;
-  margin: 7% 7%;
+  margin: 3% 7%;
 }
 
 input {
-  margin-top: 10px;
-  font-family: 'Joti One', cursive;
+  /*margin-top: 10px;*/
+  font-family: 'Lato', Helvetica, sans-serif;
   box-sizing: border-box;
   font-size: 100%;
   font-weight: bold;
@@ -297,7 +294,7 @@ input {
   margin-left: 5%;
   /*width: 60%;
   margin-left: 30%;*/
-  margin-bottom: 10px;
+  /*margin-bottom: 10px;*/
   border-radius: 5px;
 }
 
@@ -313,7 +310,7 @@ form .signup {
   width: 90%;
   margin-top: 10%;
   margin-left: 5%;
-  box-shadow: 5px 5px #e91e63;
+  box-shadow: 5px 10px #e91e63;
 }
 
 .task-description h3 {
@@ -373,7 +370,8 @@ form .signup {
 }
 
 .eventDay {
-  margin-left: 10%;
+  width: 90%;
+  margin-left: 5%;
   background-color: black;
   border-radius: 10px;
 }
@@ -384,4 +382,33 @@ form .signup {
   width: 98%;
   margin-left: 1%;
 }
+
+/* Login Page */
+
+.header-login {
+  background-image: linear-gradient(to bottom left, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("../../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 50%, 0 100%);
+}
+
+.hero-text-box h1 {
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  font-size: 400%;
+  color: #16a085;
+  text-transform: uppercase;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+.hero-text-box {
+  position: absolute;
+  top: 80%;
+  left: 40%;
+  transform: translate(-60%, -60%);
+}
+
+
 
