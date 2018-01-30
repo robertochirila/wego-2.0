@@ -51,7 +51,7 @@ export default class AddTasks extends React.Component {
     render() {
         // rendering the component, calling TasksList and passing the tasksArray state object as a prop
         return (
-            <div>
+            <div className="header-task">
                 <NavBar/>
                 <div className="row">
                     <div className="col span-2-of-2">

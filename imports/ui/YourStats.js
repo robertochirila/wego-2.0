@@ -23,35 +23,20 @@ export default class YourStats extends React.Component {
             if (stats.find().count() > 0) {
                 console.log("You have a stats collection");
                 let myCursor = stats.findOne({userId: Meteor.userId()});
-                this.refs.creativity.value = myCursor.creativity;
-                this.refs.fitness.value = myCursor.fitness;
-                this.refs.communication.value = myCursor.communication;
-                this.refs.problemSolving.value = myCursor.problemSolving;
-                this.refs.selfControl.value = myCursor.selfControl;
-                this.refs.selfDiscipline.value = myCursor.selfDiscipline;
-                this.refs.selfEducation.value = myCursor.selfEducation;
-                this.refs.leadership.value = myCursor.leadership;
-                this.refs.research.value = myCursor.research;
-                this.refs.teamwork.value = myCursor.teamwork;
-                this.refs.dopamineRush.value = myCursor.healthIndicators.dopamineRush;
-                this.refs.willpower.value = myCursor.healthIndicators.willpower;
-                this.refs.comfortZone.value = myCursor.healthIndicators.comfortZone;
+                this.refs.creativityBar.value = myCursor.creativity;
+                this.refs.fitnessBar.value = myCursor.fitness;
+                this.refs.leadershipBar.value = myCursor.leadership;
+                this.refs.researchBar.value = myCursor.research;
+                this.refs.teamworkBar.value = myCursor.teamwork;
+                this.refs.disciplineBar.value = myCursor.selfDiscipline;
+                this.refs.logicBar.value = myCursor.problemSolving;
+                this.refs.dopamineBar.value = '30';
+                this.refs.willpowerBar.value = '40';
+                this.refs.comfortBar.value = '100';
             } else {
                 // if no records then all the fields are set to 0
                 console.log("No records in the stats db");
-                this.refs.creativity.value = "0";
-                this.refs.communication.value = "0";
-                this.refs.fitness.value = "0";
-                this.refs.problemSolving.value = "0";
-                this.refs.selfControl.value = "0";
-                this.refs.selfDiscipline.value = "0";
-                this.refs.selfEducation.value = "0";
-                this.refs.leadership.value = "0";
-                this.refs.research.value = "0";
-                this.refs.teamwork.value = "0";
-                this.refs.dopamineRush.value = "0";
-                this.refs.willpower.value = "0";
-                this.refs.comfortZone.value = "0";
+
             }
         });
 
@@ -62,22 +47,91 @@ export default class YourStats extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <p>This is the Stats component.</p>
-                <form>
-                    <input type={"text"} ref={"creativity"} placeholder={""}/>
-                    <input type={"text"} ref={"fitness"} placeholder={""}/>
-                    <input type={"text"} ref={"communication"} placeholder={""}/>
-                    <input type={"text"} ref={"problemSolving"} placeholder={""}/>
-                    <input type={"text"} ref={"selfDiscipline"} placeholder={""}/>
-                    <input type={"text"} ref={"selfControl"} placeholder={""}/>
-                    <input type={"text"} ref={"selfEducation"} placeholder={""}/>
-                    <input type={"text"} ref={"teamwork"} placeholder={""}/>
-                    <input type={"text"} ref={"leadership"} placeholder={""}/>
-                    <input type={"text"} ref={"research"} placeholder={""}/>
-                    <input type={"text"} ref={"dopamineRush"} placeholder={""}/>
-                    <input type={"text"} ref={"willpower"} placeholder={""}/>
-                    <input type={"text"} ref={"comfortZone"} placeholder={""}/>
-                </form>
+                <div className="skills-health-indicators-section">
+                    <div className="row">
+                        <div className="box">
+                            <h1>Skills</h1>
+                        </div>
+                    </div>
+                    <div className="skills-header">
+                        <div className="row">
+                            <div className="col span-3-of-3">
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills creativity">Creativity</h2>
+                                    </div>
+                                    <progress ref="creativityBar" className="progress" value="15" max="100">30%
+                                    </progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills teamwork">Teamwork</h2>
+                                    </div>
+                                    <progress ref="teamworkBar" className="progress" value="30" max="100">30%</progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills fitness">Fitness</h2>
+                                    </div>
+                                    <progress ref="fitnessBar" className="progress" value="45" max="100">45%</progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills discipline">Discipline</h2>
+                                    </div>
+                                    <progress ref="disciplineBar" className="progress" value="60" max="100">60%
+                                    </progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills research">Research</h2>
+                                    </div>
+                                    <progress ref="researchBar" className="progress" value="75" max="100">75%</progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills logic">Logic</h2>
+                                    </div>
+                                    <progress ref="logicBar" className="progress" value="90" max="100">90%</progress>
+                                </div>
+                                <div className="col span-1-of-7">
+                                    <div className="box">
+                                        <h2 className="header-skills leadership">Leadership</h2>
+                                    </div>
+                                    <progress ref="leadershipBar" className="progress" value="67" max="100">90%
+                                    </progress>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="row">
+                        <div className="box">
+                            <h1>Health Indicators</h1>
+                        </div>
+                    </div>
+                    <div className="health-indicators-header">
+                        <div className="row">
+                            <div className="col span-1-of-3">
+                                <div className="box">
+                                    <h2 className="header-skills dopamine">Dopamine Rush</h2>
+                                </div>
+                                <progress ref="dopamineBar" className="progress" value="55" max="100">90%</progress>
+                            </div>
+                            <div className="col span-1-of-3">
+                                <div className="box">
+                                    <h2 className="header-skills comfort">Comfort Zone</h2>
+                                </div>
+                                <progress ref="comfortBar" className="progress" value="67" max="100">90%</progress>
+                            </div>
+                            <div className="col span-1-of-3">
+                                <div className="box">
+                                    <h2 className="header-skills willpower">Willpower</h2>
+                                </div>
+                                <progress ref="willpowerBar" className="progress" value="75" max="100">90%</progress>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

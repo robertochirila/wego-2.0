@@ -30,7 +30,7 @@ export default class Task extends React.Component {
                 let myVar = setInterval(myCountdown, 1000);
 
                 function myCountdown() {
-                    let now = moment().format('LTS');
+                    let now = moment().format('HH:mm:ss');
                     let start = moment.utc(now, "HH:mm:ss");
                     let end = moment.utc(finishTime, "HH:mm:ss");
                     let duration = moment.duration(end.diff(start));

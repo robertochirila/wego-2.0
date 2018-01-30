@@ -41,9 +41,9 @@ NavBar color:#002171
 }
 
 .colored {
-  background-color: #1976d2;
+  background-color: rgba(34, 48, 61, 0.7);
   border-radius: 30px;
-  box-shadow: 5px 5px #e91e63;
+  box-shadow: 10px 15px #1abc9c;
   margin-bottom: 20px;
 
 }
@@ -73,7 +73,7 @@ header {
 /* NavBar */
 
 nav {
-  height: 15vh;
+  height: 9vh;
 }
 
 .navBar {
@@ -305,7 +305,7 @@ form .signup {
 /* Task Card */
 
 .task-card {
-  background-color: rgba(34,48,61,0.9);
+  background-color: rgba(34, 48, 61, 0.9);
   border-radius: 20px;
   width: 90%;
   margin-top: 10%;
@@ -410,5 +410,115 @@ form .signup {
   transform: translate(-60%, -60%);
 }
 
+/* Profile Page */
+.header-profile {
+  background-image: linear-gradient(to bottom, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.9)), url("../../img/background4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  /*clip-path: polygon(0 0, 100% 0%, 100% 100%, 20% 100%);*/
+}
+
+#form {
+  width: 90%;
+  margin-left: 5%;
+}
+
+/*  Task Page   */
+.header-task {
+  background-color: #f5f6fa;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+/* Stats page */
+
+.creativity {
+  color: #f1c40f;
+}
+
+.teamwork {
+  color: #9b59b6;
+}
+
+.fitness {
+  color: #f39c12;
+}
+
+.discipline {
+  color: #3498db;
+}
+
+.research {
+  color: #e74c3c;
+}
+
+.logic {
+  color: #1abc9c;
+}
+
+.leadership {
+  color: #27ae60;
+}
+
+.dopamine {
+  color: #c0392b;
+}
+
+.comfort {
+  color: #16a085;
+}
+
+.willpower {
+  color: #2980b9;
+}
+
+.skills-header {
+  background-color: rgba(44, 62, 80, 1);
+}
+
+.header-skills {
+  margin: 15% 10%;
+}
+
+.progress {
+  display: inline-block;
+  margin: 30% 10%;
+  border-radius: 10px;
+  height: 50px;
+  width: 70%;
+  transform: rotate(-90deg);
+}
+
+progress::-webkit-progress-bar {
+  height: 50px;
+  border-radius: 10px;
+  color: black;
+}
+
+progress::-webkit-progress-value {
+  height: 50px;
+  /*border-radius: 10px;*/
+}
+
+progress::-moz-progress-bar {
+  border-style: solid;
+  border-color: white;
+  height: 50px;
+  border-radius: 10px;
+}
+
+.health-indicators-header {
+  background-color: rgba(44, 62, 80, 1);
+}
+
+.skills-health-indicators-section {
+  background-color: rgba(44, 62, 80, 1);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
 
 
