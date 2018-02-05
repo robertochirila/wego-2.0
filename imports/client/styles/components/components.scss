@@ -72,8 +72,24 @@ header {
 
 /* NavBar */
 
+.searchBar {
+  float: left;
+  display: inline-block;
+}
+
+#searchInput {
+  margin: 5% 8%;
+  padding: 5% 3%;
+  height: 50%;
+}
+
+#searchButton {
+  display: inline-block;
+  margin: 1% 8%;
+}
+
 nav {
-  height: 9vh;
+  height: 10vh;
 }
 
 .navBar {
@@ -91,6 +107,13 @@ nav {
   float: right;
   list-style: none;
   margin-top: 10px;
+}
+
+.searchUl li {
+  cursor: pointer;
+  display: inline-block;
+  font-size: 120%;
+  font-weight: bold;
 }
 
 .main-nav li {

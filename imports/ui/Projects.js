@@ -3,11 +3,22 @@ import {Meteor} from 'meteor/meteor';
 import Navbar from "./NavBar.js";
 import moment from 'moment';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import UserProfile from "./UserProfile";
 
 
 export default class Projects extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            message: '',
+            peopleArray: []
+        }
+    }
+
     componentDidMount() {
         Meteor.subscribe('projects');
+        Meteor.subscribe('profiles');
+        Meteor.subscribe('following');
         Tracker.autorun(() => {
             let myCursor = projects.findOne({_id: this.props.projects._id});
             console.log(myCursor.projectDuration);
@@ -35,6 +46,17 @@ export default class Projects extends React.Component {
         });
     };
 
+    onSubmit(e) {
+        e.preventDefault();
+        let userEmail = this.refs.emailRef.value;
+        //console.log(userEmail);
+        let myCursor = profiles.find({email: userEmail}).fetch();
+        //console.log(myCursor);
+        this.setState({
+            peopleArray: myCursor
+        });
+    }
+
     onEnrol(e) {
         e.preventDefault();
         Meteor.call('projects.update', this.props.projects._id, Meteor.userId());
@@ -45,6 +67,21 @@ export default class Projects extends React.Component {
             <div key={this.props.projects._id}>
                 <Navbar/>
                 <div className="row">
+                    <h1>Discover People</h1>
+                    <form onSubmit={this.onSubmit.bind(this)}>
+                        <div className="row">
+                            <input type='text' ref='emailRef' placeholder='Search...'/>
+                        </div>
+                        <div className='row'>
+                            <button className='btn edit'>Discover</button>
+                        </div>
+                    </form>
+                </div>
+                <div className="row">
+                    <UserProfile user={this.state.peopleArray}/>
+                </div>
+                <div className="row">
+                    <h1>Discover Events</h1>
                     <div className="col span-1-of-4">
                         <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}

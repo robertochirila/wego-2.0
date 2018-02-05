@@ -1,0 +1,16 @@
+Wego 2.0 components list and framework.
+
+- Fonts ( font-family: 'Open Sans Condensed', sans-serif;
+          font-family: 'Lato', Helvetica, sans-serif; )
+- Colors ( Red, Blue, Green, Yellow, vivid colors )
+- Sign Up form ( Done )
+- Login form ( Done )
+- Input fields ( DOne )
+- Buttons ( Edit, View Details, Start Task, Remove Task, Finish Task, Submit Task, Enrol in Project, Login, Sign up ) ( Done )
+- Task Card ( Done )
+- Navigation Bar ( Done )
+- Project Card ( Done )
+- Profile Card ( Done )
+- Progress Bars
+- Grid framework ( SimpleGrid ) ( Done )
+- Responsive design

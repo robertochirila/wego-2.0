@@ -3,7 +3,7 @@ import DetailTask from './DetailTask';
 import {Meteor} from "meteor/meteor";
 import moment from 'moment';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
-
+import Modal from 'react-modal';
 
 export default class Task extends React.Component {
 
@@ -13,7 +13,8 @@ export default class Task extends React.Component {
         this.state = {
             showComponent: false,
             startMessage: "",
-            finishMessage: ""
+            finishMessage: "",
+            isOpen: false
         }
     }
 
@@ -98,8 +99,8 @@ export default class Task extends React.Component {
             <div key={this.props.task._id}>
                 <div className="col span-1-of-4">
                     <ReactCSSTransitionGroup transitionName="taskAnimation" transitionAppear={true}
-                                             transitionAppearTimeout={1500} transitionEnter={false}
-                                             transitionLeave={false}>
+                                             transitionAppearTimeout={1500} transitionLeave={true}
+                                             transitionLeaveTimeout={1500}>
                         <div className="task-card">
                             <div className="box">
                                 <div className="task-photo">
@@ -114,7 +115,8 @@ export default class Task extends React.Component {
                                 <div className="task-buttons">
                                     <ul className="task-buttons-list">
                                         <li>
-                                            <button className="btn view" onClick={this.detailTask.bind(this)}>View
+                                            <button className="btn view"
+                                                    onClick={() => this.setState({isOpen: true})}>View
                                                 Details
                                             </button>
                                         </li>
@@ -150,15 +152,22 @@ export default class Task extends React.Component {
                                         </div>
                                     </div>
                                 </div>
+                                <Modal isOpen={this.state.isOpen} contentLabel={'Detail Task View'}>
+                                    <p>Detail Task View Tadaaaam</p>
+                                    <button className={'btn edit'} onClick={() => this.setState({isOpen: false})}>Back
+                                        to Tasks
+                                    </button>
+                                </Modal>
                             </div>
                         </div>
+                        <br/>
+                        {this.state.startMessage ? <p>{this.state.startMessage}</p> :
+                            null}
+                        {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
+                            null}
                     </ReactCSSTransitionGroup>
                     {this.state.showComponent ?
                         <DetailTask id={this.props.task._id} taskName={this.props.task.taskName}/> :
-                        null}
-                    {this.state.startMessage ? <p>{this.state.startMessage}</p> :
-                        null}
-                    {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
                         null}
                 </div>
             </div>

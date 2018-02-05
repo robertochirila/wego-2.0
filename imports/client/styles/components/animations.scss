@@ -22,11 +22,20 @@
   animation-timing-function: ease-in-out;
 }
 
+.taskAnimation-leave {
+  opacity: 1;
+}
+
+.taskAnimation-leave-active {
+  opacity: 0;
+  transition: opacity 1.5s ease-in-out;
+}
+
 .taskAnimation-appear {
   opacity: 0.01;
 }
 
-.taskAnimation-appear.taskAnimation-appear-active {
+.taskAnimation-appear-active {
   animation-name: moveInLeft;
   animation-duration: 1.5s;
   /*animation-delay:2s;*/
@@ -43,7 +52,6 @@
   /*animation-delay:2s;*/
   animation-timing-function: ease-in-out;
 }
-
 
 @keyframes moveInLeft {
   0% {

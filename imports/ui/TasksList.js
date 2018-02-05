@@ -16,6 +16,7 @@ export default class TasksList extends React.Component {
         } else {
             // otherwise it accesses the props and maps all its content
             // then it returns for each task object a Task component
+            console.log(this.props.tasks);
             return this.props.tasks.map(function (task) {
                 return <Task key={task._id} task={task}/>
             });
@@ -25,7 +26,6 @@ export default class TasksList extends React.Component {
     render() {
         return (
             <div>
-                {/*this method call is responsible for rendering all the tasks in the database*/}
                 {this.renderTasks()}
             </div>
         );

@@ -1,15 +1,16 @@
-
+@import url('https://fonts.googleapis.com/css?family=Joti+One');
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+@import url('https://fonts.googleapis.com/css?family=Bangers');
+@import './grid/Grid';
+@import './queries/queries';
+@import './components/components';
+@import './components/animations';
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 
 }
-
-$blue-login: rgba(0, 16, 100, 1);
-$turquoise: rgba(26, 188, 156, 1);
-$blue-button: rgba(52, 152, 219, 1);
-$yellow: rgba(241, 196, 15, 1);
 
 html, body {
   font-family: 'Bangers', cursive;
@@ -33,19 +34,3 @@ span {
   color: #c2185b;
   margin-bottom: 30px;
 }
-
-
-@import url('https://fonts.googleapis.com/css?family=Joti+One');
-@import url('https://fonts.googleapis.com/css?family=Roboto');
-@import url('https://fonts.googleapis.com/css?family=Bangers');
-
-/*@import './components/_navBar';
-@import './components/_form';
-@import './components/_home';
-@import './components/_wrapper';
-/*@import '../../../node_modules/bulma_scss/bulma';*/
-/*@import './grid/simple-grid';*/
-@import './grid/Grid';
-@import './queries/queries';
-@import './components/components';
-@import './components/animations';

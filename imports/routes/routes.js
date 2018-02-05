@@ -9,6 +9,7 @@ import YourProfile from '../ui/YourProfile';
 import YourStats from '../ui/YourStats';
 import AddTasks from '../ui/AddTasks';
 import ProjectsList from '../ui/ProjectsList';
+import DisplayUserProfile from '../ui/DisplayUserProfile';
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
@@ -59,6 +60,7 @@ export const routes = (
             <Route exact path={'/yourstats'} component={YourStats} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/tasks'} component={AddTasks} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/projects'} component={ProjectsList} onEnter={onEnterPrivatePage()}/>
+            <Route exact path={'/displayUserProfile'} component={DisplayUserProfile} onEnter={onEnterPrivatePage()}/>
         </Switch>
     </BrowserRouter>
 );

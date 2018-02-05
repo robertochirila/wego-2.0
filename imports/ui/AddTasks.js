@@ -21,6 +21,7 @@ export default class AddTasks extends React.Component {
     componentDidMount() {
         Tracker.autorun(() => {
             Meteor.subscribe('mytasks');
+            Meteor.subscribe('tasks');
             // when the component is mounted I retrieve all the tasks from the database and update the state of tasksArray
             console.log("Component is mounted !");
             const myTasks = mytasks.find().fetch();
