@@ -23,13 +23,15 @@ export default class YourStats extends React.Component {
             if (stats.find().count() > 0) {
                 console.log("You have a stats collection");
                 let myCursor = stats.findOne({userId: Meteor.userId()});
+                console.log(myCursor);
                 this.refs.creativityBar.value = myCursor.creativity;
                 this.refs.fitnessBar.value = myCursor.fitness;
                 this.refs.leadershipBar.value = myCursor.leadership;
                 this.refs.researchBar.value = myCursor.research;
                 this.refs.teamworkBar.value = myCursor.teamwork;
-                this.refs.disciplineBar.value = myCursor.selfDiscipline;
-                this.refs.logicBar.value = myCursor.problemSolving;
+                this.refs.disciplineBar.value = myCursor.discipline;
+                this.refs.logicBar.value = myCursor.logic;
+                this.refs.workEthicBar.value = myCursor.workEthic;
                 this.refs.dopamineBar.value = '30';
                 this.refs.willpowerBar.value = '40';
                 this.refs.comfortBar.value = '100';
@@ -56,49 +58,56 @@ export default class YourStats extends React.Component {
                     <div className="skills-header">
                         <div className="row">
                             <div className="col span-3-of-3">
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills creativity">Creativity</h2>
                                     </div>
                                     <progress ref="creativityBar" className="progress" value="15" max="100">30%
                                     </progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills teamwork">Teamwork</h2>
                                     </div>
                                     <progress ref="teamworkBar" className="progress" value="30" max="100">30%</progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills fitness">Fitness</h2>
                                     </div>
                                     <progress ref="fitnessBar" className="progress" value="45" max="100">45%</progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills discipline">Discipline</h2>
                                     </div>
                                     <progress ref="disciplineBar" className="progress" value="60" max="100">60%
                                     </progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills research">Research</h2>
                                     </div>
                                     <progress ref="researchBar" className="progress" value="75" max="100">75%</progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills logic">Logic</h2>
                                     </div>
                                     <progress ref="logicBar" className="progress" value="90" max="100">90%</progress>
                                 </div>
-                                <div className="col span-1-of-7">
+                                <div className="col span-1-of-8">
                                     <div className="box">
                                         <h2 className="header-skills leadership">Leadership</h2>
                                     </div>
                                     <progress ref="leadershipBar" className="progress" value="67" max="100">90%
+                                    </progress>
+                                </div>
+                                <div className="col span-1-of-8">
+                                    <div className="box">
+                                        <h2 className="header-skills leadership">Leadership</h2>
+                                    </div>
+                                    <progress ref="workEthicBar" className="progress" value="67" max="100">90%
                                     </progress>
                                 </div>
                             </div>

@@ -69,13 +69,17 @@ export default class Task extends React.Component {
         // converts the duration to hours
         // and starts the countdown which will be provided
         // as an external file
+        Meteor.subscribe('tasks');
         let myCursor = mytasks.findOne({_id: this.props.task._id});
+        let myCursor2 = tasks.findOne({name: this.props.task.taskName});
+        console.log(myCursor2.name);
         let duration = myCursor.duration;
-        console.log('Now the task should start');
+        Meteor.call('tasks.update', myCursor2.name, Meteor.userId());
         Meteor.call('mytasks.started', this.props.task._id, duration);
         this.setState({
             startMessage: " Keep yourself productive. Don't forget, we are what we repeat ! "
         });
+
     }
 
     finishTask() {

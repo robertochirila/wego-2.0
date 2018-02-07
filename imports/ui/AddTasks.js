@@ -2,6 +2,7 @@ import React from 'react';
 import TasksList from './TasksList';
 import {Meteor} from 'meteor/meteor';
 import NavBar from './NavBar';
+import RenderTasks from './RenderTasks';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 // AddTasks component
@@ -13,7 +14,8 @@ export default class AddTasks extends React.Component {
         super(props);
         this.state = {
             error: "",
-            tasksArray: []
+            tasksArray: [],
+            allTasks: []
             // tasksArray is used for retrieving all the tasks in the db
         }
     }
@@ -24,12 +26,15 @@ export default class AddTasks extends React.Component {
             Meteor.subscribe('tasks');
             // when the component is mounted I retrieve all the tasks from the database and update the state of tasksArray
             console.log("Component is mounted !");
+            const allTasks = tasks.find().fetch();
             const myTasks = mytasks.find().fetch();
             this.setState({
-                tasksArray: myTasks
+                tasksArray: myTasks,
+                allTasks: allTasks
             });
         });
         console.log(this.state.tasksArray);
+        console.log(this.state.allTasks);
     }
 
     onSubmit(e) {
@@ -61,23 +66,7 @@ export default class AddTasks extends React.Component {
                                                  transitionLeave={false}>
                             <div className="box">
                                 {this.state.error ? <p>{this.state.error}</p> : undefined}
-                                <form onSubmit={this.onSubmit.bind(this)}>
-                                    <div className="row">
-                                        <label>Task Name</label>
-                                    </div>
-                                    <div className="row">
-                                        <input type={"text"} ref={"taskName"} placeholder={"Task Name"}/>
-                                    </div>
-                                    <div className={"row"}>
-                                        <label>How many hours?</label>
-                                    </div>
-                                    <div className={"row"}>
-                                        <input type={"text"} ref={"duration"} placeholder={"Duration"}/>
-                                    </div>
-                                    <div className={"row"}>
-                                        <button className="btn submit">Submit Task</button>
-                                    </div>
-                                </form>
+                                <RenderTasks myTasks={this.state.allTasks}/>
                             </div>
                         </ReactCSSTransitionGroup>
                     </div>

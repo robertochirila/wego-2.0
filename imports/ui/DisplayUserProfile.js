@@ -1,5 +1,4 @@
 import React from 'react';
-import {Session} from 'meteor/session';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 
