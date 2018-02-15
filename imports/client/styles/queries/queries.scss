@@ -10,7 +10,7 @@
     top: 75%;
     margin-left: 5%;
   }
-  form {
+  .login--form {
     width: 70% !important;
     margin-left: 15% !important;
   }
@@ -25,21 +25,25 @@
     width: 100%;
   }
   .hero-text-box {
-    margin-left: 5%;
+    margin: 10% 5%;
     width: 90%;
     padding: 0 10%;
   }
-  form {
+  .login--form {
     width: 80% !important;
     margin-left: 10% !important;
   }
 }
 
 @media (max-width: 480px) {
-  form {
+  .hero-text-box {
+    margin: 10% 5%;
+  }
+  .login--form {
     font-size: 26px !important;
     width: 90% !important;
     margin-left: 5% !important;
+    margin-bottom: 5% !important;
   }
   .col {
     width: 100%;
@@ -47,5 +51,8 @@
 
   body {
     font-size: 16px;
+  }
+  .hero{
+    font-size: 50px;
   }
 }

@@ -8,9 +8,10 @@ const history = createHistory();
 
 // NavBar component//
 
-// This component is responsible for navigating the application
+// This component is responsible for navigating the application//
 
 export default class NavBar extends React.Component {
+
     constructor(props) {
         super(props);
         this.state = {}
@@ -20,18 +21,11 @@ export default class NavBar extends React.Component {
 
     }
 
-    onSubmit(e) {
-        const userEmail = this.refs.email.value;
-        Session.set("object", userEmail);
-        console.log(userEmail);
-        this.props.history.push('/displayUserProfile');
-    }
-
     render() {
         return (
             <nav>
                 <div className="navBar">
-                    <ul className="main-nav">
+                    <ul className="main--nav">
                         <li><Link to={"/home"}>Home</Link></li>
                         <li><Link to={"/tasksfeed"}>Tasks Feed</Link></li>
                         <li><Link to={"/yourprofile"}>Your Profile</Link></li>

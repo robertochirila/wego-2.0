@@ -2,9 +2,25 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto');
 @import url('https://fonts.googleapis.com/css?family=Bangers');
 @import './grid/Grid';
-@import './queries/queries';
-@import './components/components';
-@import './components/animations';
+/*@import './queries/queries';*/
+@import './components/_fonts';
+@import './components/_login';
+@import './components/_buttons';
+@import './components/_colors';
+@import './components/_profile';
+@import './components/navbar';
+@import "./queries/queries";
+@import './components/_login--page';
+@import './components/_profile--page';
+@import './components/_task--page';
+@import './components/_submit-task';
+@import './components/_task';
+@import './components/_discover';
+@import './components/_projects';
+@import './components/_stats--page';
+@import './components/_tasksFeed--page';
+/*@import './components/_animations';*/
+/*@import './components/animations';*/
 * {
   margin: 0;
   padding: 0;
@@ -13,15 +29,13 @@
 }
 
 html, body {
-  font-family: 'Bangers', cursive;
-  font-weight: 400;
   font-size: 20px;
   overflow-x: hidden;
-
 }
 
 h1, h2, h3, h4 {
   font-family: 'Bangers', cursive;
+  font-size: 200%;
   letter-spacing: 2px;
   color: white;
   margin: 5% 3%;
@@ -31,6 +45,6 @@ span {
   margin-top: 5%;
   font-family: 'Bangers', cursive;
   letter-spacing: 2px;
-  color: #c2185b;
+  color: rgba(52, 152, 219, 1);
   margin-bottom: 30px;
 }

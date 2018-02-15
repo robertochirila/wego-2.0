@@ -1,0 +1,50 @@
+.loginAnimation-appear {
+  opacity: 0.01;
+}
+
+.loginAnimation-appear.loginAnimation-appear-active {
+  -webkit-animation-name: moveInDown;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveInDown {
+  0% {
+    opacity: 0;
+    /* from left to right */
+    transform: translateY(-15rem);
+  }
+  50% {
+    transform: translateY(+2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.heroAnimation-appear {
+  opacity: 0.01;
+}
+
+.heroAnimation-appear.heroAnimation-appear-active {
+  -webkit-animation-name: moveInUp;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(+15rem);
+  }
+  50% {
+    transform: translateY(-2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}

@@ -16,7 +16,7 @@ export default class UserProfile extends React.Component {
         if (this.props.user.length === 0) {
             return (
                 <div>
-                    <p>Search for another user !</p>
+
                 </div>
             )
         } else {

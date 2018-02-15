@@ -1,0 +1,43 @@
+nav {
+  height: 11vh;
+}
+
+.navBar {
+  z-index: 1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgba(52, 73, 94, 1);
+  box-shadow: 0 10px rgba(26, 188, 156, 1);
+  border-radius: 10px;
+}
+
+.main--nav {
+  float: right;
+  list-style: none;
+  margin-top: 10px;
+}
+
+.main--nav li {
+  font-family: $form-font;
+  cursor: pointer;
+  display: inline-block;
+  margin: 30px 30px;
+  font-size: 120%;
+  font-weight: bold;
+}
+
+.main--nav li a:link,
+.main--nav li a:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  color: white;
+  border-bottom: 2px solid transparent;
+  transition: border-bottom 0.5s;
+}
+
+.main--nav li a:hover,
+.main--nav li a:active {
+  border-bottom: 2px solid;
+}

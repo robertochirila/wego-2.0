@@ -74,7 +74,7 @@ export default class YourProfile extends React.Component {
 
     render() {
         return (
-            <div className="header-profile">
+            <div className="profile--page">
                 <NavBar/>
                 <div className="row">
                     <div className="col span-1-of-3">
@@ -83,13 +83,13 @@ export default class YourProfile extends React.Component {
                         <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}
                                                  transitionLeave={false}>
-                            <div className="box colored">
+                            <div className="box box__colored">
                                 <div className="box" id={"box1"}>
                                     <figure className="profile-photo-figure">
-                                        <img src="../../img/icon.png" className="round-photo"/>
+                                        <img src="../../img/icon.png" className="round--photo"/>
                                     </figure>
 
-                                    <button className="btn edit" onClick={this.onEdit.bind(this)}>Edit Profile
+                                    <button className="btn btn__edit" onClick={this.onEdit.bind(this)}>Edit Profile
                                     </button>
                                     <div className="row">
                                         <div className="col span-2-of-2">
@@ -115,35 +115,49 @@ export default class YourProfile extends React.Component {
                         </ReactCSSTransitionGroup>
                     </div>
                     <div className="col span-1-of-3">
-                        <ReactCSSTransitionGroup transitionName="loginAnimation" transitionAppear={true}
-                                                 transitionAppearTimeout={2000} transitionEnter={false}
-                                                 transitionLeave={false}>
-                            <form onSubmit={this.onSubmit.bind(this)} id={"form"}>
-                                <div className="row">
-                                    <label>Name</label>
-                                    <input type={"text"} ref={"name"} placeholder={"Your Name"} readOnly/>
-                                </div>
-                                <div className="row">
-                                    <label>Gender</label>
-                                    <input type={"text"} ref={"gender"} placeholder={"Your Gender"} readOnly/>
-                                </div>
-                                <div className="row">
-                                    <label>Age</label>
-                                    <input type={"text"} ref={"age"} placeholder={"Your Age"} readOnly/>
-                                </div>
-                                <div className="row">
-                                    <label>Quote</label>
-                                    <input type={"text"} ref={"quote"} placeholder={"Your Quote"} readOnly/>
-                                </div>
-                                <div className="row">
-                                    <div className="box">
-                                        <button id={"editButton"} className="btn edit"
-                                                onClick={this.onSubmit.bind(this)}>Submit Profile
-                                        </button>
+                        <div className={'box'}>
+                            <ReactCSSTransitionGroup transitionName="loginAnimation" transitionAppear={true}
+                                                     transitionAppearTimeout={2000} transitionEnter={false}
+                                                     transitionLeave={false}>
+                                <form onSubmit={this.onSubmit.bind(this)} id={"form"} className={'profile--form'}>
+                                    <div className="row">
+                                        <label className={'profile__label'}>Name</label>
                                     </div>
-                                </div>
-                            </form>
-                        </ReactCSSTransitionGroup>
+                                    <div className={'row'}>
+                                        <input type={"text"} ref={"name"} placeholder={"Your Name"} readOnly
+                                               className={'profile__input'}/>
+                                    </div>
+                                    <div className="row">
+                                        <label className={'profile__label'}>Gender</label>
+                                    </div>
+                                    <div className={'row'}>
+                                        <input type={"text"} ref={"gender"} placeholder={"Your Gender"} readOnly
+                                               className={'profile__input'}/>
+                                    </div>
+                                    <div className="row">
+                                        <label className={'profile__label'}>Age</label>
+                                    </div>
+                                    <div className={'row'}>
+                                        <input type={"text"} ref={"age"} placeholder={"Your Age"} readOnly
+                                               className={'profile__input'}/>
+                                    </div>
+                                    <div className="row">
+                                        <label className={'profile__label'}>Quote</label>
+                                    </div>
+                                    <div className={'row'}>
+                                        <input type={"text"} ref={"quote"} placeholder={"Your Quote"} readOnly
+                                               className={'profile__input'}/>
+                                    </div>
+                                    <div className="row">
+                                        <div className="box">
+                                            <button id={"editButton"} className="btn btn__submit"
+                                                    onClick={this.onSubmit.bind(this)}>Submit Profile
+                                            </button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </ReactCSSTransitionGroup>
+                        </div>
                     </div>
                 </div>
             </div>

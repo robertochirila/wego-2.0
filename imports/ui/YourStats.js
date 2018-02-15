@@ -41,18 +41,16 @@ export default class YourStats extends React.Component {
 
             }
         });
-
-
     }
 
     render() {
         return (
             <div>
                 <NavBar/>
-                <div className="skills-health-indicators-section">
+                <div className="skills--page">
                     <div className="row">
                         <div className="box">
-                            <h1>Skills</h1>
+                            <h1 className={'myH1'}>Skills</h1>
                         </div>
                     </div>
                     <div className="skills-header">
@@ -60,83 +58,97 @@ export default class YourStats extends React.Component {
                             <div className="col span-3-of-3">
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills creativity">Creativity</h2>
+                                        <h2 className="myH2">Creativity</h2>
+                                        <progress ref="creativityBar" className="progress" value="15" max="100">30%
+                                        </progress>
                                     </div>
-                                    <progress ref="creativityBar" className="progress" value="15" max="100">30%
-                                    </progress>
+
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills teamwork">Teamwork</h2>
+                                        <h2 className="myH2">Teamwork</h2>
+                                        <progress ref="teamworkBar" className="progress" value="30" max="100">30%
+                                        </progress>
+
                                     </div>
-                                    <progress ref="teamworkBar" className="progress" value="30" max="100">30%</progress>
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills fitness">Fitness</h2>
+                                        <h2 className="myH2">Fitness</h2>
+                                        <progress ref="fitnessBar" className="progress" value="45" max="100">45%
+                                        </progress>
+
                                     </div>
-                                    <progress ref="fitnessBar" className="progress" value="45" max="100">45%</progress>
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills discipline">Discipline</h2>
+                                        <h2 className="myH2">Discipline</h2>
+                                        <progress ref="disciplineBar" className="progress" value="60" max="100">60%
+                                        </progress>
                                     </div>
-                                    <progress ref="disciplineBar" className="progress" value="60" max="100">60%
-                                    </progress>
+
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills research">Research</h2>
+                                        <h2 className="myH2">Research</h2>
+                                        <progress ref="researchBar" className="progress" value="75" max="100">75%
+                                        </progress>
+
                                     </div>
-                                    <progress ref="researchBar" className="progress" value="75" max="100">75%</progress>
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills logic">Logic</h2>
+                                        <h2 className="myH2">Logic</h2>
+                                        <progress ref="logicBar" className="progress" value="90" max="100">90%
+                                        </progress>
+
                                     </div>
-                                    <progress ref="logicBar" className="progress" value="90" max="100">90%</progress>
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills leadership">Leadership</h2>
+                                        <h2 className="myH2">Leadership</h2>
+                                        <progress ref="leadershipBar" className="progress" value="67" max="100">90%
+                                        </progress>
                                     </div>
-                                    <progress ref="leadershipBar" className="progress" value="67" max="100">90%
-                                    </progress>
+
                                 </div>
                                 <div className="col span-1-of-8">
                                     <div className="box">
-                                        <h2 className="header-skills leadership">Leadership</h2>
+                                        <h2 className="myH2">Work Ethic</h2>
+                                        <progress ref="workEthicBar" className="progress" value="67" max="100">90%
+                                        </progress>
                                     </div>
-                                    <progress ref="workEthicBar" className="progress" value="67" max="100">90%
-                                    </progress>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="row">
                         <div className="box">
-                            <h1>Health Indicators</h1>
+                            <h1 className={'myH1'}>Health Indicators</h1>
                         </div>
                     </div>
                     <div className="health-indicators-header">
                         <div className="row">
                             <div className="col span-1-of-3">
                                 <div className="box">
-                                    <h2 className="header-skills dopamine">Dopamine Rush</h2>
+                                    <h2 className="myH2">Dopamine Rush</h2>
+                                    <progress ref="dopamineBar" className="progress" value="55" max="100">90%</progress>
+
                                 </div>
-                                <progress ref="dopamineBar" className="progress" value="55" max="100">90%</progress>
                             </div>
                             <div className="col span-1-of-3">
                                 <div className="box">
-                                    <h2 className="header-skills comfort">Comfort Zone</h2>
+                                    <h2 className="myH2">Comfort Zone</h2>
+                                    <progress ref="comfortBar" className="progress" value="67" max="100">90%</progress>
+
                                 </div>
-                                <progress ref="comfortBar" className="progress" value="67" max="100">90%</progress>
                             </div>
                             <div className="col span-1-of-3">
                                 <div className="box">
-                                    <h2 className="header-skills willpower">Willpower</h2>
+                                    <h2 className="myH2">Willpower</h2>
+                                    <progress ref="willpowerBar" className="progress" value="75" max="100">90%</progress>
+
                                 </div>
-                                <progress ref="willpowerBar" className="progress" value="75" max="100">90%</progress>
                             </div>
                         </div>
                     </div>

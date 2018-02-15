@@ -1,0 +1,32 @@
+.task--photo {
+  /*background-color: rgba(52, 152, 219, 1);*/
+  width: 90%;
+  margin: 5% 5%;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.task--card {
+  background-color: rgba(52, 73, 94, 0.9);
+  width: 90%;
+  margin: 0 5%;
+  border-radius: 10px;
+  box-shadow: 5px 10px $form-shadow;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in;
+}
+
+.task--name--header {
+  color: #2ecc71;
+}
+
+.task--card:hover,
+.task--card:visited {
+  background-color: white;
+  color: black;
+  transform: scale(1.03);
+}
+
+.task--buttons--list {
+  list-style: none;
+  text-decoration: none;
+}

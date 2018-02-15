@@ -45,13 +45,13 @@ export default class DisplayUserProfile extends React.Component {
                         <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}
                                                  transitionLeave={false}>
-                            <div className="box colored">
+                            <div className="box__colored">
                                 <div className="box" id={"box1"}>
                                     <figure className="profile-photo-figure">
-                                        <img src="../../img/icon.png" className="round-photo"/>
+                                        <img src="../../img/icon.png" className="round--photo"/>
                                     </figure>
 
-                                    <button className="btn edit" onClick={this.onFollow.bind(this)}>Follow
+                                    <button className="btn btn__login" onClick={this.onFollow.bind(this)}>Follow
                                     </button>
                                     <div className="row">
                                         <div className="col span-2-of-2">

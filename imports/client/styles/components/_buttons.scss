@@ -1,0 +1,165 @@
+@import "fonts";
+@import "colors";
+
+.btn {
+  font-weight: bolder;
+  font-family: $form-font;
+  color: white;
+  border-radius: 5px;
+  text-transform: uppercase;
+  border: 2px solid white;
+  text-align: center;
+  text-decoration: none;
+  transition: color 0.5s, background-color 0.5s;
+}
+
+.btn__login {
+  margin-top: 2%;
+  margin-bottom: 5%;
+  padding: 3% 20%;
+  background-color: $login-button-background;
+  border-color: white;
+}
+
+.btn__login:hover,
+.btn__login:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn__signUp {
+  margin-top: 5%;
+  margin-bottom: 5%;
+  padding: 3% 20%;
+  background-color: $signUp-button-background;
+  border-color: white;
+}
+
+.btn__signUp:hover,
+.btn__signUp:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.link {
+  text-decoration: none;
+  color: red;
+}
+
+.btn__submit {
+  width: 60%;
+  margin: 5% 20%;
+  padding: 3% 10%;
+  background-color: $submit-button-background;
+  border-color: white;
+  float: left;
+}
+
+.btn__submit:hover,
+.btn__submit:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn__edit {
+  padding: 3% 10%;
+  background-color: $edit-button-background;
+  border-color: white;
+}
+
+.btn__edit:hover,
+.btn__edit:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn__remove-task{
+  padding: 3% 20%;
+  background-color: $signUp-button-background;
+  border-color: white;
+  width: 90%;
+  margin: 5% 5%;
+}
+.btn__remove-task:hover,
+.btn__remove-task:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn__view-details {
+  padding: 3% 20%;
+  background-color: #3498db;
+  border-color: white;
+  width: 90%;
+  margin: 5% 5%;
+}
+
+.btn__view-details:hover,
+.btn__view-details:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+.btn__start {
+  padding: 3% 20%;
+  background-color: #f1c40f;
+  border-color: white;
+  width: 90%;
+  margin: 5% 5%;
+}
+
+.btn__start:hover,
+.btn__start:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+.btn__finish {
+  padding: 3% 20%;
+  background-color: #1abc9c;
+  border-color: white;
+  width: 90%;
+  margin: 5% 5%;
+}
+
+.btn__finish:hover,
+.btn__finish:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+.btn__discover {
+  text-align: center;
+  padding: 3% 10%;
+  background-color: #1abc9c;
+  border-color: white;
+  width: 50%;
+  margin: 5% 25%;
+}
+
+.btn__discover:hover,
+.btn__discover:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+.btn__enrol {
+  text-align: center;
+  padding: 3% 10%;
+  background-color: rgba(52, 73, 94, 1);
+  border-color: white;
+  width: 50%;
+  margin: 5% 25%;
+}
+
+.btn__enrol:hover,
+.btn__enrol:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}

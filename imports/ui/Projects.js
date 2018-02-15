@@ -64,39 +64,42 @@ export default class Projects extends React.Component {
 
     render() {
         return (
-            <div key={this.props.projects._id}>
+            <div key={this.props.projects._id} className={'discover--page'}>
                 <Navbar/>
                 <div className="row">
-                    <h1>Discover People</h1>
-                    <form onSubmit={this.onSubmit.bind(this)}>
-                        <div className="row">
-                            <input type='text' ref='emailRef' placeholder='Search...'/>
-                        </div>
-                        <div className='row'>
-                            <button className='btn edit'>Discover</button>
-                        </div>
-                    </form>
+                    <div className='col span-2-of-2'>
+                        <h1 className={'discover--header'}>Discover People</h1>
+                        <form onSubmit={this.onSubmit.bind(this)} className={'discover--form'}>
+                            <div className="row">
+                                <div className={'box'}>
+                                    <input type='text' ref='emailRef' placeholder='Search...'
+                                           className={'discover--input'}/>
+                                </div>
+                            </div>
+                            <div className='row'>
+                                <button className='btn btn__discover'>Discover</button>
+                            </div>
+                        </form>
+                        <UserProfile user={this.state.peopleArray}/>
+                    </div>
                 </div>
-                <div className="row">
-                    <UserProfile user={this.state.peopleArray}/>
-                </div>
-                <div className="row">
-                    <h1>Discover Events</h1>
+                <div className={'row'}>
+                    <h1 className={'discover--header'}>Discover Events</h1>
                     <div className="col span-1-of-4">
                         <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}
                                                  transitionLeave={false}>
                             <div className="box">
-                                <h1 className="projectName">{this.props.projects.projectName}</h1>
-                                <div className="project-card">
-                                    <div className="project-photo">
+                                <h1 className="discover--header">{this.props.projects.projectName}</h1>
+                                <div className="project--card">
+                                    <div className="project--photo">
                                         <figure className="project-photo-figure">
-                                            <img src="../../img/icon.png" className="round-photo"/>
+                                            <img src="../../img/icon.png" className="round--photo"/>
                                         </figure>
                                     </div>
-                                    <div className="project-description">
-                                        <h3>{this.props.projects.projectDuration} days of training</h3>
-                                        <h3>{this.props.projects.people} people enroled</h3>
+                                    <div className="project--description">
+                                        <h3 className={'project--description--header'}>{this.props.projects.projectDuration} days of training</h3>
+                                        <h3 className={'project--description--header'}>{this.props.projects.people} people enroled</h3>
                                     </div>
                                     <div className="task-countdown">
                                         <div className="row">
@@ -107,7 +110,7 @@ export default class Projects extends React.Component {
                                         </div>
                                     </div>
                                     <div className="box">
-                                        <h4>Enrol expires in: </h4>
+                                        <h4 className={'project--description--header'}>Enrol expires in: </h4>
                                     </div>
                                     <div className="task-countdown">
                                         <div className="row">
@@ -126,7 +129,8 @@ export default class Projects extends React.Component {
                                         </div>
                                     </div>
                                     <div className="project-button">
-                                        <button className="btn enrol" onClick={this.onEnrol.bind(this)}>Enrol</button>
+                                        <button className="btn btn__enrol" onClick={this.onEnrol.bind(this)}>Enrol
+                                        </button>
                                     </div>
                                 </div>
                             </div>

@@ -1,0 +1,24 @@
+.login--page {
+  background-image: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 1)), url("../../img/background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%);
+}
+
+.hero-text-box {
+}
+
+.hero {
+  text-shadow: 2px 0 0 #000, -2px 0 0 #000, 0 2px 0 #000, 0 -2px 0 #000, 1px 1px #000, -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000;
+  font-size: 400%;
+  color: #16a085;
+  text-transform: uppercase;
+  word-spacing: 5px;
+  letter-spacing: 3px;
+}
+
+.dot {
+  color: rgba(231, 76, 60, 1);
+}

@@ -2,11 +2,10 @@ import React from 'react';
 import DetailTask from './DetailTask';
 import {Meteor} from "meteor/meteor";
 import moment from 'moment';
-import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 import Modal from 'react-modal';
 
 export default class Task extends React.Component {
-
 
     constructor(props) {
         super(props);
@@ -79,7 +78,6 @@ export default class Task extends React.Component {
         this.setState({
             startMessage: " Keep yourself productive. Don't forget, we are what we repeat ! "
         });
-
     }
 
     finishTask() {
@@ -105,54 +103,54 @@ export default class Task extends React.Component {
                     <ReactCSSTransitionGroup transitionName="taskAnimation" transitionAppear={true}
                                              transitionAppearTimeout={1500} transitionLeave={true}
                                              transitionLeaveTimeout={1500}>
-                        <div className="task-card">
+                        <div className="task--card">
                             <div className="box">
-                                <div className="task-photo">
-                                    <figure className="task-photo-figure">
-                                        <img src="../../img/icon.png" className="round-photo"/>
+                                <div className="task--photo">
+                                    <figure className="task--photo--figure">
+                                        <img src="../../img/icon.png" className="round--photo"/>
                                     </figure>
                                 </div>
-                                <div className="task-description">
-                                    <h3>{this.props.task.taskName}</h3>
-                                    <h3>{this.props.task.duration}</h3>
+                                <div className="task--description">
+                                    <h3 className={'task--name--header'}>You are {this.props.task.taskName} for </h3>
+                                    <h3 className={'task--name--header'}>{this.props.task.duration} hours</h3>
                                 </div>
-                                <div className="task-buttons">
-                                    <ul className="task-buttons-list">
+                                <div className="task--buttons">
+                                    <ul className="task--buttons--list">
                                         <li>
-                                            <button className="btn view"
+                                            <button className="btn btn__view-details"
                                                     onClick={() => this.setState({isOpen: true})}>View
                                                 Details
                                             </button>
                                         </li>
                                         <li>
-                                            <button className="btn start" onClick={this.startTask.bind(this)}>Start Task
+                                            <button className="btn btn__start" onClick={this.startTask.bind(this)}>Start Task
                                             </button>
                                         </li>
                                         <li>
-                                            <button className="btn remove" onClick={this.removeTask.bind(this)}>Remove
+                                            <button className="btn btn__remove-task" onClick={this.removeTask.bind(this)}>Remove
                                                 Task
                                             </button>
                                         </li>
                                         <li>
-                                            <button className="btn finish" onClick={this.finishTask.bind(this)}>Finish
+                                            <button className="btn btn__finish" onClick={this.finishTask.bind(this)}>Finish
                                                 Task
                                             </button>
                                         </li>
                                     </ul>
                                 </div>
-                                <div className="task-countdown">
+                                <div className="task--countdown">
                                     <div className="row">
                                         <div className="col span-1-of-3">
                                             <h5>Hours</h5>
-                                            <span className="hours" ref={"hours"}>2</span>
+                                            <span className="hours" ref={"hours"}>0</span>
                                         </div>
                                         <div className="col span-1-of-3">
                                             <h5>Minutes</h5>
-                                            <span className="minutes" ref={"minutes"}>27</span>
+                                            <span className="minutes" ref={"minutes"}>0</span>
                                         </div>
                                         <div className="col span-1-of-3">
                                             <h5>Seconds</h5>
-                                            <span className="seconds" ref={"seconds"}>3</span>
+                                            <span className="seconds" ref={"seconds"}>0</span>
                                         </div>
                                     </div>
                                 </div>
