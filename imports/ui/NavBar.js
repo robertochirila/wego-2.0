@@ -14,11 +14,38 @@ export default class NavBar extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {}
+        this.state = {
+            encourageName: '',
+            encourageNo: 0,
+            taskNo: 0
+        }
     }
 
     componentDidMount() {
+        let f1 = setTimeout(myFunc, 500);
+        Meteor.subscribe('profiles');
+        Meteor.subscribe('stats');
+        let that = this;
 
+        function myFunc() {
+            let statsCursor = stats.findOne({userId: Meteor.userId()});
+            let encourageNumber = statsCursor.encourages;
+            let finishedTasksNo = statsCursor.finishedTasks;
+            console.log(encourageNumber);
+            that.setState({
+                encourageNo: encourageNumber,
+                taskNo: finishedTasksNo
+            });
+            let myCursor = profiles.findOne({userId: Meteor.userId()});
+            console.log(myCursor);
+            let encourageId = myCursor.encourage;
+            console.log(encourageId);
+            let otherCursor = profiles.findOne({userId: encourageId});
+            console.log(otherCursor.name);
+            that.setState({
+                encourageName: otherCursor.name
+            });
+        }
     }
 
     render() {
@@ -33,6 +60,15 @@ export default class NavBar extends React.Component {
                         <li><Link to={"/tasks"}>Tasks</Link></li>
                         <li><Link to={"/projects"}>Discover</Link></li>
                     </ul>
+                    <div className={'mini-stats'}>
+                        {this.state.encourageName ?
+                            <p className={'mini-stats-p'}><span>{this.state.encourageName} encourages your recent activity.</span>
+                            </p>
+                            : <span>Currently nobody is encouraging your activity. </span>}
+                        <p className={'mini-stats-p'}>
+                            <span>{this.state.encourageNo} people have encouraged you lately.</span></p>
+                        <p className={'mini-stats-p'}><span>You have finished {this.state.taskNo} tasks.</span></p>
+                    </div>
                 </div>
             </nav>
         );

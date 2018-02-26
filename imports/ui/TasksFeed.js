@@ -33,13 +33,13 @@ export default class TasksFeed extends React.Component {
         return (
             <div>
                 <NavBar/>
-                <div className={'container'}>
-                    <div className={'box'}>
-                        <h1 className={'taskH1'}>Your Daily Task Feed</h1>
-                        <RenderFeed id={this.state.idArray}/>
+                    <div className={'container'}>
+                        <div className={'box'}>
+                            <h1 className={'taskH1'}>Your Daily Task Feed</h1>
+                            <RenderFeed id={this.state.idArray}/>
+                        </div>
                     </div>
                 </div>
-            </div>
         );
     }
 }

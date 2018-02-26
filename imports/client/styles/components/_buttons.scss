@@ -13,6 +13,37 @@
   transition: color 0.5s, background-color 0.5s;
 }
 
+.btn__encourage{
+  margin: 2% 30%;
+  width: 40%;
+  padding: 2% 10%;
+  border-radius: 30px;
+  background-color: $edit-button-background;
+  border-color: white;
+}
+.btn__encourage:hover,
+.btn__encourage:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
+.btn__feed {
+  margin: 2% 20%;
+  width: 40%;
+  padding: 3% 5%;
+  border-radius: 30px;
+  background-color: $login-button-background;
+  border-color: white;
+}
+
+.btn__feed:hover,
+.btn__feed:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
 .btn__login {
   margin-top: 2%;
   margin-bottom: 5%;
@@ -77,13 +108,14 @@
   cursor: pointer;
 }
 
-.btn__remove-task{
+.btn__remove-task {
   padding: 3% 20%;
   background-color: $signUp-button-background;
   border-color: white;
   width: 90%;
   margin: 5% 5%;
 }
+
 .btn__remove-task:hover,
 .btn__remove-task:visited {
   color: black;
@@ -105,6 +137,7 @@
   background-color: white;
   cursor: pointer;
 }
+
 .btn__start {
   padding: 3% 20%;
   background-color: #f1c40f;
@@ -119,6 +152,7 @@
   background-color: white;
   cursor: pointer;
 }
+
 .btn__finish {
   padding: 3% 20%;
   background-color: #1abc9c;
@@ -133,6 +167,7 @@
   background-color: white;
   cursor: pointer;
 }
+
 .btn__discover {
   text-align: center;
   padding: 3% 10%;
@@ -148,6 +183,7 @@
   background-color: white;
   cursor: pointer;
 }
+
 .btn__enrol {
   text-align: center;
   padding: 3% 10%;

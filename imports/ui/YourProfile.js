@@ -7,6 +7,9 @@ import ReactCSSTransitionGroup from 'react-addons-css-transition-group'
 export default class YourProfile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            status: ''
+        }
     }
 
     componentDidMount() {
@@ -17,6 +20,15 @@ export default class YourProfile extends React.Component {
         $('form').css('display', 'none');
         Tracker.autorun(() => {
             Meteor.subscribe('myprofile');
+            Meteor.subscribe('profiles');
+            if (profiles.find({userId: Meteor.userId()}).count() === 1) {
+                let myCursor = profiles.findOne({userId: Meteor.userId()});
+                let status = myCursor.status;
+                this.setState({
+                    status: status
+                });
+            }
+
             if (myprofile.find().count() > 0) {
                 console.log('You have a profile in the db!');
                 let myCursor = myprofile.findOne({userId: Meteor.userId()});
@@ -87,6 +99,7 @@ export default class YourProfile extends React.Component {
                                 <div className="box" id={"box1"}>
                                     <figure className="profile-photo-figure">
                                         <img src="../../img/icon.png" className="round--photo"/>
+                                        <h3 className={'status-header'}>{this.state.status}</h3>
                                     </figure>
 
                                     <button className="btn btn__edit" onClick={this.onEdit.bind(this)}>Edit Profile

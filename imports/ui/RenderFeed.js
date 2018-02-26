@@ -55,7 +55,10 @@ export default class renderFeed extends React.Component {
     render() {
         return (
             <div>
-                <button onClick={this.onRefresh.bind(this)}>Search For Activities</button>
+                <div className={'box'}>
+                    <button onClick={this.onRefresh.bind(this)} className={'btn btn__feed'}>Search For Activities
+                    </button>
+                </div>
                 {this.state.error ?
                     <TaskFollower id={this.state.idArray}/> : undefined}
             </div>

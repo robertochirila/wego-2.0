@@ -1,15 +1,25 @@
 import React from 'react';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Meteor} from "meteor/meteor";
 
 
 export default class DisplayUserProfile extends React.Component {
     constructor(props) {
         super(props);
+        this.state = {
+            status: ''
+        }
     }
 
     componentDidMount() {
         Meteor.subscribe('following');
+        Meteor.subscribe('profiles');
         let userId = this.props.userProfile.userId;
+        let myCursor1 = profiles.findOne({userId: userId});
+        let status = myCursor1.status;
+        this.setState({
+            status: status
+        });
         let myCursor = following.find({user: Meteor.userId()}).count();
         console.log(myCursor);
         if (myCursor.length === 1) {
@@ -49,6 +59,7 @@ export default class DisplayUserProfile extends React.Component {
                                 <div className="box" id={"box1"}>
                                     <figure className="profile-photo-figure">
                                         <img src="../../img/icon.png" className="round--photo"/>
+                                        <h3>{this.state.status}</h3>
                                     </figure>
 
                                     <button className="btn btn__login" onClick={this.onFollow.bind(this)}>Follow

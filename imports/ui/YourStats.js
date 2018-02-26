@@ -147,7 +147,6 @@ export default class YourStats extends React.Component {
                                 <div className="box">
                                     <h2 className="myH2">Willpower</h2>
                                     <progress ref="willpowerBar" className="progress" value="75" max="100">90%</progress>
-
                                 </div>
                             </div>
                         </div>

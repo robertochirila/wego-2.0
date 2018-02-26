@@ -13,12 +13,13 @@
 @import './components/_login--page';
 @import './components/_profile--page';
 @import './components/_task--page';
-@import './components/_submit-task';
+@import 'components/submit--task';
 @import './components/_task';
 @import './components/_discover';
 @import './components/_projects';
 @import './components/_stats--page';
 @import './components/_tasksFeed--page';
+@import './components/_feed';
 /*@import './components/_animations';*/
 /*@import './components/animations';*/
 * {
