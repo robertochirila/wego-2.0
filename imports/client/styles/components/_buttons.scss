@@ -13,6 +13,21 @@
   transition: color 0.5s, background-color 0.5s;
 }
 
+.btn__back{
+  margin: 2% 40%;
+  width: 20%;
+  padding: 2% 5%;
+  border-radius: 30px;
+  background-color: $edit-button-background;
+  border-color: white;
+}
+.btn__back:hover,
+.btn__back:visited {
+  color: black;
+  background-color: white;
+  cursor: pointer;
+}
+
 .btn__encourage{
   margin: 2% 30%;
   width: 40%;

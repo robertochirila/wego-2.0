@@ -40,28 +40,19 @@ export default class RenderTasks extends React.Component {
 
     render() {
         return (
-            <div className='row'>
-                <div className='col span-1-of-3'>
+            <form onSubmit={this.onSubmit.bind(this)} className={'submit-task__form'}>
+                <div className='row'>
+                    <select onChange={this.handleChange.bind(this)} className={'submit-task__select'}>
+                        {this.fetchTasks()}
+                    </select>
                 </div>
-                <div className='col span-1-of-3'>
-                    <form onSubmit={this.onSubmit.bind(this)} className={'submit-task__form'}>
-                        <div className='row'>
-                            <select onChange={this.handleChange.bind(this)} className={'submit-task__select'}>
-                                {this.fetchTasks()}
-                            </select>
-                        </div>
-                        <div className='row'>
-                            <input type='text' ref='duration' placeholder='duration' className={'submit-task__input'}/>
-                        </div>
-                        <div className='row'>
-                            <button className={'btn btn__submit'}>Submit Task</button>
-                        </div>
-                    </form>
+                <div className='row'>
+                    <input type='text' ref='duration' placeholder='duration' className={'submit-task__input'}/>
                 </div>
-                <div className='col span-1-of-3'>
+                <div className='row'>
+                    <button className={'btn btn__submit'}>Submit Task</button>
                 </div>
-                {this.state.currentState}
-            </div>
+            </form>
         );
     }
 }

@@ -37,21 +37,67 @@ export default class AddTasks extends React.Component {
         console.log(this.state.allTasks);
     }
 
-    onSubmit(e) {
-        // this function gets the values from the input field and makes the insertion
-        // later I will create a Meteor method that calls tasks.insert etc and perform input validation
+    submitTask(e) {
         e.preventDefault();
-        const taskName = this.refs.taskName.value.trim();
-        const duration = Number(this.refs.duration.value.trim());
-        if ((taskName && duration) !== "") {
-            Meteor.call('mytasks.insert', taskName, duration)
-        } else {
-            this.setState({
-                error: "Values shouldn't be null !"
-            })
+        let i = 0;
+        let taskName = this.refs.taskName.value.trim();
+        if (taskName !== '') {
+            i++;
         }
-        this.refs.taskName.value = '';
-        this.refs.duration.value = '';
+        let creativityValue = this.refs.creativityInput.value.trim();
+        if (Number(creativityValue) <= 1 && Number(creativityValue) > 0) {
+            i++;
+            $('#creativityInput').css('display', 'none');
+            $('#teamworkInput').css('display', 'inline')
+        }
+        let teamworkValue = this.refs.teamworkInput.value.trim();
+        if (Number(teamworkValue) <= 1 && Number(teamworkValue) > 0) {
+            i++;
+            $('#teamworkInput').css('display', 'none');
+            $('#fitnessInput').css('display', 'inline');
+        }
+        let fitnessValue = this.refs.fitnessInput.value.trim();
+        if (Number(fitnessValue) <= 1 && Number(fitnessValue) > 0) {
+            i++;
+            $('#fitnessInput').css('display', 'none');
+            $('#disciplineInput').css('display', 'inline');
+        }
+        let disciplineValue = this.refs.disciplineInput.value.trim();
+        if (Number(disciplineValue) <= 1 && Number(disciplineValue) > 0) {
+            i++;
+            $('#disciplineInput').css('display', 'none');
+            $('#researchInput').css('display', 'inline');
+        }
+        let researchValue = this.refs.researchInput.value.trim();
+        if (Number(researchValue) <= 1 && Number(researchValue) > 0) {
+            i++;
+            $('#researchInput').css('display', 'none');
+            $('#logicInput').css('display', 'inline');
+        }
+        let logicValue = this.refs.logicInput.value.trim();
+        if (Number(logicValue) <= 1 && Number(logicValue) > 0) {
+            i++;
+            $('#logicInput').css('display', 'none');
+            $('#leadershipInput').css('display', 'inline');
+        }
+        let leadershipValue = this.refs.leadershipInput.value.trim();
+        if (Number(leadershipValue) <= 1 && Number(leadershipValue) > 0) {
+            i++;
+            $('#leadershipInput').css('display', 'none');
+            $('#workEthicInput').css('display', 'inline');
+        }
+        let workEthicValue = this.refs.workEthicInput.value.trim();
+        if (Number(workEthicValue) <= 1 && Number(workEthicValue) > 0) {
+            i++;
+            $('#workEthicInput').css('display', 'none');
+            $('#fitnessInput').css('display', 'inline');
+        }
+        if (i === 9) {
+            // Call method that asks the admin to validate the task
+            $('#fitnessInput').css('display', 'none');
+            console.log('Propose task complete !');
+            console.log(i);
+        }
     }
 
     render() {
@@ -60,14 +106,63 @@ export default class AddTasks extends React.Component {
             <div className="header-task">
                 <NavBar/>
                 <div className="row">
-                    <div className="col span-2-of-2">
+                    <div className={'col span-1-of-2'}>
+                        <div className={'box'}>
+                            <h1 className={'myH1'}>Propose a Task</h1>
+                        </div>
+                        <form onSubmit={this.submitTask.bind(this)} className={'submit-task__form'}>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'taskName'} placeholder={'Task Name'}
+                                       className={'submit-task__input'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'creativityInput'} placeholder={'Creativity value 0-1'}
+                                       className={'submit-task__input'} id={'creativityInput'}
+                                       name={'creativityInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'teamworkInput'} placeholder={'Teamwork value 0-1'}
+                                       className={'submit-task__input'} id={'teamworkInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'fitnessInput'} placeholder={'Fitness value 0-1'}
+                                       className={'submit-task__input'} id={'fitnessInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'disciplineInput'} placeholder={'Discipline value 0-1'}
+                                       className={'submit-task__input'} id={'disciplineInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'researchInput'} placeholder={'Research value 0-1'}
+                                       className={'submit-task__input'} id={'researchInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'logicInput'} placeholder={'Logic value 0-1'}
+                                       className={'submit-task__input'}
+                                       id={'logicInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'leadershipInput'} placeholder={'Leadership value 0-1'}
+                                       className={'submit-task__input'} id={'leadershipInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <input type={'text'} ref={'workEthicInput'} placeholder={'Work Ethic value 0-1'}
+                                       className={'submit-task__input'} id={'workEthicInput'}/>
+                            </div>
+                            <div className={'row'}>
+                                <button type={'submit'} className={'btn btn__submit'}>Submit</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="col span-1-of-2">
+                        <div className={'box'}>
+                            <h1 className={'myH1'}>Select a Task</h1>
+                        </div>
                         <ReactCSSTransitionGroup transitionName="addTaskAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}
                                                  transitionLeave={false}>
-                            <div className="box">
-                                {this.state.error ? <p>{this.state.error}</p> : undefined}
-                                <RenderTasks myTasks={this.state.allTasks}/>
-                            </div>
+                            {this.state.error ? <p>{this.state.error}</p> : undefined}
+                            <RenderTasks myTasks={this.state.allTasks}/>
                         </ReactCSSTransitionGroup>
                     </div>
                 </div>

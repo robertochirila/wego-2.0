@@ -62,12 +62,17 @@ export default class NavBar extends React.Component {
                     </ul>
                     <div className={'mini-stats'}>
                         {this.state.encourageName ?
-                            <p className={'mini-stats-p'}><span>{this.state.encourageName} encourages your recent activity.</span>
+                            <p className={'mini-stats-p'}><span
+                                className={'mini-stats-span'}>{this.state.encourageName}</span> encourages your recent
+                                activity.
                             </p>
-                            : <span>Currently nobody is encouraging your activity. </span>}
+                            : <p className={'mini-stats-p'}><span>Currently nobody is encouraging your activity. </span>
+                            </p>}
                         <p className={'mini-stats-p'}>
-                            <span>{this.state.encourageNo} people have encouraged you lately.</span></p>
-                        <p className={'mini-stats-p'}><span>You have finished {this.state.taskNo} tasks.</span></p>
+                            <span className={'mini-stats-span'}>{this.state.encourageNo}</span> <span>people have encouraged
+                            you lately.</span></p>
+                        <p className={'mini-stats-p'}><span>You have finished</span> <span
+                            className={'mini-stats-span'}>{this.state.taskNo} tasks.</span></p>
                     </div>
                 </div>
             </nav>

@@ -2,17 +2,19 @@
   background-color: rgba(52, 73, 94, 1);
   border-radius: 10px;
   box-shadow: 5px 10px $form-shadow;
+  width: 70%;
+  margin-left: 15%;
 }
 
 .submit-task__select {
-  padding: 5px 8px;
+  padding: 0 8px;
   width: 60%;
-  margin: 5% 20%;
+  margin: 4% 20%;
   border: 2px solid white;
   box-shadow: 3px 5px $form-shadow;
   font-family: $form-font;
   font-weight: bolder;
-  color:white;
+  color: white;
   background-color: rgba(52, 73, 94, 1);
 }
 
@@ -24,4 +26,36 @@
   font-weight: bolder;
   border-radius: 5px;
   background-color: white;
+}
+
+#leadershipInput {
+  display: none;
+}
+
+#creativityInput {
+  //display: none;
+}
+
+#teamworkInput {
+  display: none;
+}
+
+#fitnessInput {
+  display: none;
+}
+
+#disciplineInput {
+  display: none;
+}
+
+#researchInput {
+  display: none;
+}
+
+#logicInput {
+  display: none;
+}
+
+#workEthicInput {
+  display: none;
 }

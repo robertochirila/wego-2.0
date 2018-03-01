@@ -20,6 +20,7 @@
 @import './components/_stats--page';
 @import './components/_tasksFeed--page';
 @import './components/_feed';
+@import './components/_modal';
 /*@import './components/_animations';*/
 /*@import './components/animations';*/
 * {
@@ -48,4 +49,15 @@ span {
   letter-spacing: 2px;
   color: rgba(52, 152, 219, 1);
   margin-bottom: 30px;
+}
+
+p {
+  color: white;
+  font-family: $form-font;
+  font-size: 120%;
+  font-weight: bolder;
+  line-height: 40px;
+  letter-spacing: 2px;
+  word-spacing: 3px;
+  margin: 0 3%;
 }
