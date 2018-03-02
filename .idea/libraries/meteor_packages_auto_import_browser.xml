@@ -100,6 +100,7 @@
         <item url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/packages/es5-shim/es5-shim-sham.js" />
         <item url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/packages/es5-shim/es5-shim-sham.min.js" />
         <item url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/server.js" />
+        <item url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
         <item url="file://$USER_HOME$/.meteor/packages/geojson-utils/1.0.10/web.browser/geojson-utils.js" />
         <item url="file://$USER_HOME$/.meteor/packages/geojson-utils/1.0.10/web.browser/main.js" />
         <item url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/charref.js" />
@@ -328,6 +329,7 @@
       <root url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/packages/es5-shim/es5-shim-sham.js" />
       <root url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/packages/es5-shim/es5-shim-sham.min.js" />
       <root url="file://$USER_HOME$/.meteor/packages/es5-shim/4.7.3/web.browser/server.js" />
+      <root url="file://$USER_HOME$/.meteor/packages/fortawesome_fontawesome/4.7.0/web.browser/upstream/css/font-awesome.css" />
       <root url="file://$USER_HOME$/.meteor/packages/geojson-utils/1.0.10/web.browser/geojson-utils.js" />
       <root url="file://$USER_HOME$/.meteor/packages/geojson-utils/1.0.10/web.browser/main.js" />
       <root url="file://$USER_HOME$/.meteor/packages/html-tools/1.0.11/web.browser/charref.js" />
