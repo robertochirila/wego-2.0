@@ -106,60 +106,69 @@ export default class AddTasks extends React.Component {
             <div className="header-task">
                 <NavBar/>
                 <div className="row">
-                    <div className={'col span-1-of-2'}>
+                    <div className={'col span-1-of-2'} id={'t1'}>
                         <div className={'box'}>
-                            <h1 className={'myH1'}>Propose a Task</h1>
+                            <ReactCSSTransitionGroup transitionName="opacityAnimation" transitionAppear={true}
+                                                     transitionAppearTimeout={2000} transitionLeave={false}>
+                                <h1 className={'myH1--tasks'}>Propose a Task</h1>
+                            </ReactCSSTransitionGroup>
                         </div>
-                        <form onSubmit={this.submitTask.bind(this)} className={'submit-task__form'}>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'taskName'} placeholder={'Task Name'}
-                                       className={'submit-task__input'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'creativityInput'} placeholder={'Creativity value 0-1'}
-                                       className={'submit-task__input'} id={'creativityInput'}
-                                       name={'creativityInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'teamworkInput'} placeholder={'Teamwork value 0-1'}
-                                       className={'submit-task__input'} id={'teamworkInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'fitnessInput'} placeholder={'Fitness value 0-1'}
-                                       className={'submit-task__input'} id={'fitnessInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'disciplineInput'} placeholder={'Discipline value 0-1'}
-                                       className={'submit-task__input'} id={'disciplineInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'researchInput'} placeholder={'Research value 0-1'}
-                                       className={'submit-task__input'} id={'researchInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'logicInput'} placeholder={'Logic value 0-1'}
-                                       className={'submit-task__input'}
-                                       id={'logicInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'leadershipInput'} placeholder={'Leadership value 0-1'}
-                                       className={'submit-task__input'} id={'leadershipInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <input type={'text'} ref={'workEthicInput'} placeholder={'Work Ethic value 0-1'}
-                                       className={'submit-task__input'} id={'workEthicInput'}/>
-                            </div>
-                            <div className={'row'}>
-                                <button type={'submit'} className={'btn btn__submit'}>Submit</button>
-                            </div>
-                        </form>
+                        <ReactCSSTransitionGroup transitionName="moveRightAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionLeave={false}>
+                            <form onSubmit={this.submitTask.bind(this)} className={'submit-task__form'}>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'taskName'} placeholder={'Task Name'}
+                                           className={'submit-task__input'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'creativityInput'} placeholder={'Creativity value 0-1'}
+                                           className={'submit-task__input'} id={'creativityInput'}
+                                           name={'creativityInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'teamworkInput'} placeholder={'Teamwork value 0-1'}
+                                           className={'submit-task__input'} id={'teamworkInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'fitnessInput'} placeholder={'Fitness value 0-1'}
+                                           className={'submit-task__input'} id={'fitnessInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'disciplineInput'} placeholder={'Discipline value 0-1'}
+                                           className={'submit-task__input'} id={'disciplineInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'researchInput'} placeholder={'Research value 0-1'}
+                                           className={'submit-task__input'} id={'researchInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'logicInput'} placeholder={'Logic value 0-1'}
+                                           className={'submit-task__input'}
+                                           id={'logicInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'leadershipInput'} placeholder={'Leadership value 0-1'}
+                                           className={'submit-task__input'} id={'leadershipInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <input type={'text'} ref={'workEthicInput'} placeholder={'Work Ethic value 0-1'}
+                                           className={'submit-task__input'} id={'workEthicInput'}/>
+                                </div>
+                                <div className={'row'}>
+                                    <button type={'submit'} className={'btn btn__submit'}>Submit</button>
+                                </div>
+                            </form>
+                        </ReactCSSTransitionGroup>
                     </div>
-                    <div className="col span-1-of-2">
+                    <div className="col span-1-of-2"id={'t2'}>
                         <div className={'box'}>
-                            <h1 className={'myH1'}>Select a Task</h1>
+                            <ReactCSSTransitionGroup transitionName="opacityAnimation" transitionAppear={true}
+                                                     transitionAppearTimeout={2000} transitionLeave={false}>
+                                <h1 className={'myH1--tasks'}>Select a Task</h1>
+                            </ReactCSSTransitionGroup>
                         </div>
-                        <ReactCSSTransitionGroup transitionName="addTaskAnimation" transitionAppear={true}
-                                                 transitionAppearTimeout={1500} transitionEnter={false}
+                        <ReactCSSTransitionGroup transitionName="moveLeftAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionEnter={false}
                                                  transitionLeave={false}>
                             {this.state.error ? <p>{this.state.error}</p> : undefined}
                             <RenderTasks myTasks={this.state.allTasks}/>

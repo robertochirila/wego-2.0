@@ -6,21 +6,32 @@
   border-radius: 5px;
 }
 
+#taskColumn {
+  background-color: #f1c40f;
+  border-radius: 10px;
+  box-shadow: 5px 10px $form-shadow;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in;
+  //background-image: linear-gradient(to right bottom, rgba(44, 62, 80, 0.3), rgba(44, 62, 80, 1)), url("./img/background3.jpg");
+  //background-position: center;
+  margin: 2% 7%;
+}
+
 .task--card {
-  background-color: rgba(52, 73, 94, 0.9);
+
+  background-color: rgba(52, 73, 94, 0.9) !important;
   width: 90%;
-  margin: 0 5%;
+  margin-top: 40%;
   border-radius: 10px;
   box-shadow: 5px 10px $form-shadow;
   transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in;
 }
 
 .task--name--header {
-  color: #2ecc71;
+  color: #e74c3c;
 }
 
-.task--card:hover,
-.task--card:visited {
+#taskColumn:hover,
+#taskColumn:visited {
   background-color: white;
   color: black;
   transform: scale(1.03);

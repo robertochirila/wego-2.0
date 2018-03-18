@@ -91,9 +91,9 @@ export default class YourProfile extends React.Component {
                 <div className="row">
                     <div className="col span-1-of-3">
                     </div>
-                    <div className="col span-1-of-3">
-                        <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
-                                                 transitionAppearTimeout={1500} transitionEnter={false}
+                    <div className="col span-1-of-3" id={'profileForm'}>
+                        <ReactCSSTransitionGroup transitionName="moveRightAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionEnter={false}
                                                  transitionLeave={false}>
                             <div className="box box__colored">
                                 <div className="box" id={"box1"}>
@@ -127,7 +127,7 @@ export default class YourProfile extends React.Component {
                             </div>
                         </ReactCSSTransitionGroup>
                     </div>
-                    <div className="col span-1-of-3">
+                    <div className="col span-1-of-3" id={'editForm'}>
                         <div className={'box'}>
                             <ReactCSSTransitionGroup transitionName="loginAnimation" transitionAppear={true}
                                                      transitionAppearTimeout={2000} transitionEnter={false}

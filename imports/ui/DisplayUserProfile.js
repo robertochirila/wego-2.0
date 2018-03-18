@@ -51,36 +51,34 @@ export default class DisplayUserProfile extends React.Component {
                 <div className="row">
                     <div className="col span-1-of-3">
                     </div>
-                    <div className="col span-1-of-3">
-                        <ReactCSSTransitionGroup transitionName="projectAnimation" transitionAppear={true}
+                    <div className={'col span-1-of-3'}>
+                        <ReactCSSTransitionGroup transitionName="moveRightAnimation" transitionAppear={true}
                                                  transitionAppearTimeout={1500} transitionEnter={false}
                                                  transitionLeave={false}>
-                            <div className="box__colored">
-                                <div className="box" id={"box1"}>
-                                    <figure className="profile-photo-figure">
-                                        <img src="../../img/icon.png" className="round--photo"/>
-                                        <h3>{this.state.status}</h3>
-                                    </figure>
 
-                                    <button className="btn btn__login" onClick={this.onFollow.bind(this)}>Follow
-                                    </button>
-                                    <div className="row">
-                                        <div className="col span-2-of-2">
-                                            <h1>Name</h1>
-                                            <span id={"name"}>{this.props.userProfile.name}</span>
-                                            <h1>Quote</h1>
-                                            <span id={"quote"}>{this.props.userProfile.quote}</span>
-                                        </div>
+                            <div className="box__colored">
+                                <div className={'col span-1-of-3'}>
+                                    <div className="box" id={"box1"}>
+                                        <figure className="profile-photo-figure">
+                                            <img src="../../img/girl.jpeg" className="round--photo"/>
+                                            <h3>{this.state.status}</h3>
+                                        </figure>
                                     </div>
-                                    <div className="row">
-                                        <div className="col span-1-of-2">
-                                            <h3>Gender</h3>
-                                            <span id={"gender"}>{this.props.userProfile.gender}</span>
-                                        </div>
-                                        <div className="col span-1-of-2">
-                                            <h3>Age</h3>
-                                            <span id={"age"}>{this.props.userProfile.age}</span>
-                                        </div>
+                                    <div className={'box'}>
+                                        <button className="btn btn__login" onClick={this.onFollow.bind(this)}>Follow
+                                        </button>
+                                    </div>
+                                </div>
+                                <div className="col span-2-of-3">
+                                    <h1>{this.props.userProfile.name}</h1>
+                                    <span id={"quote"}>{this.props.userProfile.quote}</span>
+                                </div>
+                                <div className="row">
+                                    <div className="col span-1-of-2">
+                                        <h3>{this.props.userProfile.gender}</h3>
+                                    </div>
+                                    <div className="col span-1-of-2">
+                                        <h3>{this.props.userProfile.age} years old.</h3>
                                     </div>
                                 </div>
                             </div>

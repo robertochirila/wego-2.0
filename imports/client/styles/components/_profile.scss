@@ -1,15 +1,32 @@
 .round--photo {
   border-radius: 180px;
+  width: 140px;
+  height: 140px;
   margin: 10% 5%;
 }
 
 .box__colored {
-  background-color: $profile-card-background;
-  border-radius: 10px;
-  box-shadow: 5px 10px $form-shadow;
+  background-color: #16a085;
+  border-radius: 25px;
+}
+#profileForm{
+  margin: 4% 0%;
+}
+#quote{
+  color:black;
+}
+#age{
+  color:black;
+}
+#gender{
+  color:black;
+}
+#name{
+  color:black;
 }
 
 .profile--form {
+  margin-top: 10%;
   width: 60%;
   margin-left: 20%;
   border-radius: 10px;

@@ -15,6 +15,7 @@ export default class Task extends React.Component {
             startMessage: "",
             finishMessage: "",
             isOpen: false,
+            divStyle: '',
             creativity: 0,
             teamwork: 0,
             fitness: 0,
@@ -22,15 +23,88 @@ export default class Task extends React.Component {
             research: 0,
             logic: 0,
             leadership: 0,
-            workEthic: 0
+            workEthic: 0,
+            projectMessage: ''
         }
     }
 
     componentDidMount() {
         Tracker.autorun(() => {
+            Meteor.subscribe('myprofile');
+            Meteor.subscribe('projects');
+            let taskName = this.props.task.taskName;
+            console.log(taskName);
+            switch (taskName) {
+                case 'PROGRAMMING':
+                    console.log('changed image for programming');
+                    this.setState({
+                        url: './img/programming.png'
+                    });
+                    break;
+                case 'READING':
+                    console.log('changed image for reading');
+                    this.setState({
+                        url: './img/reading.png'
+                    });
+                    break;
+                case 'RUNNING':
+                    this.setState({
+                        url: './img/running.png'
+                    });
+                    break;
+                case 'PLAYING TENNIS':
+                    this.setState({
+                        url: './img/tennis.png'
+                    });
+                    break;
+
+            }
+            let f2 = setTimeout(myFunc, 500);
+            let that = this;
+            function myFunc() {
+                let taskName = that.props.task.taskName;
+                //console.log(taskName);
+                let myCursor2 = myprofile.findOne({userId: Meteor.userId()});
+                //let relevantTasks = myCursor2.relevantTasks;
+                //console.log(myCursor2.projects);
+                for (let i = 0; i < myCursor2.projects.length; i++) {
+                    //console.log(projectId);
+                    let projectId = myCursor2.projects[i];
+                    if (projectId !== undefined) {
+                        console.log(projectId);
+                        let myCursor3 = projects.findOne({_id: projectId});
+                        console.log(myCursor3);
+                        let relevantTasks = myCursor3.relevantTasks;
+                        let projectName = myCursor3.projectName;
+                        console.log(relevantTasks);
+                        console.log(taskName);
+                        if (relevantTasks.includes(taskName)) {
+                            console.log('Entered here!');
+                            console.log(projectName);
+                            that.setState({
+                                projectMessage: projectName
+                            })
+                        }
+                    }
+                }
+
+            }
+
             let myCursor = mytasks.findOne({_id: this.props.task._id});
             let taskId = this.props.task._id;
             let started = myCursor.started;
+            let myTime = moment.utc(myCursor.startedAt, 'HH:mm:ss');
+            let hour = myTime.hours();
+            let min = myTime.minutes();
+            let sec = myTime.seconds();
+            let now = moment().format('HH:mm:ss');
+            let checkTime = moment.utc(now, "HH:mm:ss");
+            if (checkTime.hours() < hour) {
+                Meteor.call('mytasks.remove', taskId);
+            } else if (checkTime.hours() === hour && checkTime.minutes() < min) {
+                Meteor.call('mytasks.remove', taskId);
+            }
+            console.log(hour, min, sec);
             let hoursSpan = this.refs.hours;
             let minutesSpan = this.refs.minutes;
             let secondsSpan = this.refs.seconds;
@@ -47,15 +121,16 @@ export default class Task extends React.Component {
                     minutesSpan.innerHTML = (duration.minutes());
                     secondsSpan.innerHTML = (duration.seconds());
                     if (duration.hours() === 0 && duration.minutes() === 0 && duration.seconds() === 1) {
-                        console.log("task has finished");
+                        //console.log("task has finished");
                         Meteor.call('tasks.finished', taskId);
                     }
                 }
             } else {
-                console.log("This task hasn't started");
+                //console.log("This task hasn't started");
             }
         });
     }
+
 
     viewDetails(e) {
         this.setState({isOpen: true});
@@ -146,62 +221,36 @@ export default class Task extends React.Component {
         // first it should update the finished field in the db
     }
 
-    render() {
+    renderTask(e) {
+        let imgUrl = this.state.url;
+        let taskImage = {
+            /*backgroundImage: 'url(' + imgUrl + ')',
+            backgroundPosition:'center',
+            backgroundSize:'cover',
+            backgroundRepeat:'no-repeat',*/
+            width: 280,
+            height: 240
+
+        };
         return (
-            <div key={this.props.task._id}>
-                <div className="col span-1-of-4">
-                    <ReactCSSTransitionGroup transitionName="taskAnimation" transitionAppear={true}
-                                             transitionAppearTimeout={1500} transitionLeave={true}
-                                             transitionLeaveTimeout={1500}>
-                        <div className="task--card">
-                            <div className="box">
+            <ReactCSSTransitionGroup transitionName="opacityAnimation" transitionAppear={true}
+                                     transitionAppearTimeout={2000} transitionLeave={false}>
+                <div className="col span-1-of-3" id={'taskColumn'}>
+                    <div className={'box'}>
+                        <div className={'col span-1-of-2'}>
+                            <div className={'row'}>
                                 <div className="task--photo">
                                     <figure className="task--photo--figure">
-                                        <img src="../../img/icon.png" className="round--photo"/>
+                                        <ReactCSSTransitionGroup transitionName="rotateAnimation"
+                                                                 transitionAppear={true}
+                                                                 transitionAppearTimeout={2000}
+                                                                 transitionLeave={false}>
+                                            <img src={this.state.url} style={taskImage}/>
+                                        </ReactCSSTransitionGroup>
                                     </figure>
                                 </div>
-                                <div className="task--description">
-                                    <h4 className={'task--name--header'}>You are {this.props.task.taskName} for </h4>
-                                    <h4 className={'task--name--header'}>{this.props.task.duration} hours</h4>
-                                </div>
-                                <div className="task--buttons">
-                                    <div className={'col span-1-of-2'}>
-                                        <ul className="task--buttons--list">
-                                            <FlipMove duration={750} easing="ease-out">
-                                                <li>
-                                                    <button className="btn btn__view-details"
-                                                            onClick={this.viewDetails.bind(this)}>View
-                                                        Details
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <button className="btn btn__start"
-                                                            onClick={this.startTask.bind(this)}>Start
-                                                        Task
-                                                    </button>
-                                                </li>
-                                            </FlipMove>
-                                        </ul>
-                                    </div>
-                                    <div className={'col span-1-of-2'}>
-                                        <ul className={'task--buttons--list'}>
-                                            <FlipMove duration={750} easing="ease-out">
-                                                <li>
-                                                    <button className="btn btn__remove-task"
-                                                            onClick={this.removeTask.bind(this)}>Remove
-                                                        Task
-                                                    </button>
-                                                </li>
-                                                <li>
-                                                    <button className="btn btn__finish"
-                                                            onClick={this.finishTask.bind(this)}>Finish
-                                                        Task
-                                                    </button>
-                                                </li>
-                                            </FlipMove>
-                                        </ul>
-                                    </div>
-                                </div>
+                            </div>
+                            <div className={'row'}>
                                 <div className="task--countdown">
                                     <div className="row">
                                         <div className="col span-1-of-3">
@@ -218,104 +267,171 @@ export default class Task extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                                <Modal isOpen={this.state.isOpen} contentLabel={'Detail Task View'}
-                                       className="Modal"
-                                       overlayClassName="Overlay"
-                                       ariaHideApp={false}>
-                                    <div className={'row'}>
-                                        <div className='col span-1-of-4'>
-                                            <div className="box">
-                                                <h2 className="myH2">Creativity</h2>
-                                                <progress ref="creativityBar" className="progress" id={'creativityBar'}
-                                                          value={this.state.creativity}
-                                                          max="100">30%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                        <div className='col span-1-of-4'>
-                                            <div className="box">
-                                                <h2 className="myH2">Teamwork</h2>
-                                                <progress ref="teamworkBar" className="progress" id={'teamworkBar'}
-                                                          value={this.state.teamwork}
-                                                          max="100">30%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                        <div className='col span-1-of-4'>
-                                            <div className="box">
-                                                <h2 className="myH2">Fitness</h2>
-                                                <progress ref="fitnessBar" className="progress" id={'fitnessBar'}
-                                                          value={this.state.fitness} max="100">45%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                        <div className='col span-1-of-4'>
-                                            <div className="box">
-                                                <h2 className="myH2">Discipline</h2>
-                                                <progress ref="disciplineBar" className="progress" id={'disciplineBar'}
-                                                          value={this.state.discipline}
-                                                          max="100">60%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div className={'row'}>
-                                        <div className={'col span-1-of-4'}>
-                                            <div className="box">
-                                                <h2 className="myH2">Research</h2>
-                                                <progress ref="researchBar" className="progress" id={'researchBar'}
-                                                          value={this.state.research}
-                                                          max="100">75%
-                                                </progress>
-
-                                            </div>
-                                        </div>
-                                        <div className={'col span-1-of-4'}>
-                                            <div className="box">
-                                                <h2 className="myH2">Logic</h2>
-                                                <progress ref="logicBar" className="progress" id={'logicBar'}
-                                                          value={this.state.logic}
-                                                          max="100">90%
-                                                </progress>
-
-                                            </div>
-                                        </div>
-                                        <div className={'col span-1-of-4'}>
-                                            <div className="box">
-                                                <h2 className="myH2">Leadership</h2>
-                                                <progress ref="leadershipBar" className="progress" id={'leadershipBar'}
-                                                          value={this.state.leadership}
-                                                          max="100">90%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                        <div className={'col span-1-of-4'}>
-                                            <div className="box">
-                                                <h2 className="myH2">Work Ethic</h2>
-                                                <progress ref="workEthicBar" className="progress" id={'workEthicBar'}
-                                                          value={this.state.workEthic}
-                                                          max="100">90%
-                                                </progress>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <button className={'btn btn__back'}
-                                            onClick={() => this.setState({isOpen: false})}>Back
-                                        to Tasks
-                                    </button>
-                                </Modal>
                             </div>
                         </div>
-                        <br/>
-                        {this.state.startMessage ? <p>{this.state.startMessage}</p> :
-                            null}
-                        {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
-                            null}
-                    </ReactCSSTransitionGroup>
+                        <div className={'col span-1-of-2'}>
+                            <div className={'row'}>
+                                <div className="task--description">
+                                    <h4 className={'task--name--header'}>{this.props.task.taskName} for </h4>
+                                    <h4 className={'task--name--header'}>{this.props.task.duration} hours</h4>
+                                    {this.state.projectMessage ?
+                                        <h4 className={'task--name--header'}>In
+                                            the {this.state.projectMessage}</h4> :
+                                        null}
+                                </div>
+                            </div>
+                            <div className={'row'}>
+                                <div className="task--buttons">
+                                    <div className={'col span-1-of-2'}>
+                                        <ul className="task--buttons--list">
+                                            <FlipMove duration={750} easing="ease-out">
+                                                <li>
+                                                    <button className="btn btn__view-details"
+                                                            id={'viewDetailsButton'}
+                                                            onClick={this.viewDetails.bind(this)}>View
+                                                        Details
+                                                    </button>
+                                                </li>
+                                                <li>
+                                                    <button className="btn btn__remove-task" id={'removeButton'}
+                                                            onClick={this.removeTask.bind(this)}>Remove
+                                                        Task
+                                                    </button>
+                                                </li>
+
+                                            </FlipMove>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div className={'col span-1-of-2'}>
+                                    <ul className={'task--buttons--list'}>
+                                        <FlipMove duration={750} easing="ease-out">
+                                            <li>
+                                                <button className="btn btn__finish" id={'finishButton'}
+                                                        onClick={this.finishTask.bind(this)}>Finish
+                                                    Task
+                                                </button>
+                                            </li>
+                                            <li>
+                                                <button className="btn btn__start" id={'startButton'}
+                                                        onClick={this.startTask.bind(this)}>Start
+                                                    Task
+                                                </button>
+                                            </li>
+                                        </FlipMove>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <Modal isOpen={this.state.isOpen} contentLabel={'Detail Task View'}
+                           className="Modal"
+                           overlayClassName="Overlay"
+                           ariaHideApp={false}>
+                        <div className={'row'}>
+                            <div className='col span-1-of-4'>
+                                <div className="box">
+                                    <h2 className="myH2">Creativity</h2>
+                                    <progress ref="creativityBar" className="progress" id={'creativityBar'}
+                                              value={this.state.creativity}
+                                              max="100">30%
+                                    </progress>
+                                </div>
+                            </div>
+                            <div className='col span-1-of-4'>
+                                <div className="box">
+                                    <h2 className="myH2">Teamwork</h2>
+                                    <progress ref="teamworkBar" className="progress" id={'teamworkBar'}
+                                              value={this.state.teamwork}
+                                              max="100">30%
+                                    </progress>
+                                </div>
+                            </div>
+                            <div className='col span-1-of-4'>
+                                <div className="box">
+                                    <h2 className="myH2">Fitness</h2>
+                                    <progress ref="fitnessBar" className="progress" id={'fitnessBar'}
+                                              value={this.state.fitness} max="100">45%
+                                    </progress>
+                                </div>
+                            </div>
+                            <div className='col span-1-of-4'>
+                                <div className="box">
+                                    <h2 className="myH2">Discipline</h2>
+                                    <progress ref="disciplineBar" className="progress" id={'disciplineBar'}
+                                              value={this.state.discipline}
+                                              max="100">60%
+                                    </progress>
+                                </div>
+                            </div>
+                        </div>
+                        <div className={'row'}>
+                            <div className={'col span-1-of-4'}>
+                                <div className="box">
+                                    <h2 className="myH2">Research</h2>
+                                    <progress ref="researchBar" className="progress" id={'researchBar'}
+                                              value={this.state.research}
+                                              max="100">75%
+                                    </progress>
+
+                                </div>
+                            </div>
+                            <div className={'col span-1-of-4'}>
+                                <div className="box">
+                                    <h2 className="myH2">Logic</h2>
+                                    <progress ref="logicBar" className="progress" id={'logicBar'}
+                                              value={this.state.logic}
+                                              max="100">90%
+                                    </progress>
+
+                                </div>
+                            </div>
+                            <div className={'col span-1-of-4'}>
+                                <div className="box">
+                                    <h2 className="myH2">Leadership</h2>
+                                    <progress ref="leadershipBar" className="progress" id={'leadershipBar'}
+                                              value={this.state.leadership}
+                                              max="100">90%
+                                    </progress>
+                                </div>
+                            </div>
+                            <div className={'col span-1-of-4'}>
+                                <div className="box">
+                                    <h2 className="myH2">Work Ethic</h2>
+                                    <progress ref="workEthicBar" className="progress" id={'workEthicBar'}
+                                              value={this.state.workEthic}
+                                              max="100">90%
+                                    </progress>
+                                </div>
+                            </div>
+                        </div>
+                        <button className={'btn btn__back'}
+                                onClick={() => this.setState({isOpen: false})}>Back
+                            to Tasks
+                        </button>
+                    </Modal>
+
+                    <br/>
+                    {this.state.startMessage ? <p>{this.state.startMessage}</p> :
+                        null}
+                    {this.state.finishMessage ? <p>{this.state.finishMessage}</p> :
+                        null}
+
                     {this.state.showComponent ?
                         <DetailTask id={this.props.task._id} taskName={this.props.task.taskName}/> :
                         null}
                 </div>
+            </ReactCSSTransitionGroup>
+
+        )
+
+    }
+
+
+    render() {
+        return (
+            <div key={this.props.task._id}>
+                {this.renderTask()}
             </div>
         );
     }

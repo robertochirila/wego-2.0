@@ -1,6 +1,7 @@
 import React from 'react';
 import NavBar from './NavBar'
 import RenderFeed from './RenderFeed'
+import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
 
 export default class TasksFeed extends React.Component {
     constructor(props) {
@@ -33,13 +34,21 @@ export default class TasksFeed extends React.Component {
         return (
             <div>
                 <NavBar/>
-                    <div className={'container'}>
-                        <div className={'box'}>
+                <div className={'container'}>
+                    <div className={'box'}>
+                        <ReactCSSTransitionGroup transitionName="opacityAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={2000} transitionEnter={false}
+                                                 transitionLeave={false}>
                             <h1 className={'taskH1'}>Your Daily Task Feed</h1>
+                        </ReactCSSTransitionGroup>
+                        <ReactCSSTransitionGroup transitionName="moveUpAnimation" transitionAppear={true}
+                                                 transitionAppearTimeout={3000} transitionEnter={false}
+                                                 transitionLeave={false}>
                             <RenderFeed id={this.state.idArray}/>
-                        </div>
+                        </ReactCSSTransitionGroup>
                     </div>
                 </div>
+            </div>
         );
     }
 }

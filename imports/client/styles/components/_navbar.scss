@@ -10,6 +10,20 @@ nav {
   color: red;
 }
 
+.mobile-nav-icon {
+  float: right;
+  /*margin-top: 30px;*/
+  cursor: pointer;
+  display: none;
+  margin: 4% 2%;
+}
+
+.mobile-nav-icon i {
+  font-size: 300%;
+  color: #fff;
+
+}
+
 .navBar {
   z-index: 1;
   position: fixed;

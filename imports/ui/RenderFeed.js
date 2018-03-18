@@ -15,7 +15,7 @@ export default class renderFeed extends React.Component {
     onRefresh() {
         Meteor.subscribe('tasks');
         Meteor.subscribe('profiles');
-        let myFunc = setTimeout(f1, 1000);
+        let myFunc = setTimeout(f1, 500);
         let array = [];
         const id = this.props;
         let that = this;

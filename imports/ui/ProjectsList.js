@@ -13,7 +13,7 @@ export default class ProjectsList extends React.Component {
 
     componentDidMount() {
         Meteor.subscribe('projects');
-        let myVar = setTimeout(myFunc, 1000);
+        /*let myVar = setTimeout(myFunc, 1000);
 
         function myFunc() {
             let myCursor = projects.find().count();
@@ -24,9 +24,10 @@ export default class ProjectsList extends React.Component {
                 Meteor.call('projects.insert', "Manchester Marathon");
             }
 
-        }
+        }*/
 
         Tracker.autorun(() => {
+            Meteor.subscribe('projects');
             const myProjects = projects.find().fetch();
             this.setState({
                 projectsArray: myProjects
@@ -38,7 +39,5 @@ export default class ProjectsList extends React.Component {
         return this.state.projectsArray.map(function (projects) {
             return <Projects key={projects._id} projects={projects}/>
         });
-
-
     }
 }

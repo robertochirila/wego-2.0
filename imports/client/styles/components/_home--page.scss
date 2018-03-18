@@ -29,19 +29,23 @@
 }
 
 .what--paragraph {
-  line-height: 30px;
+  line-height: 35px;
   letter-spacing: 4px;
   word-spacing: 6px;
+  font-weight: bolder;
 }
 
 .userPhoto {
-  width: 260px;
+  margin: 5% 5%;
+  width: 400px;
   height: 500px;
+  border-radius: 180%;
 }
 
 .sciencePhoto {
   width: 400px;
-  height: 500px;
+  height: 400px;
+  margin: 5% 5%;
 }
 
 .who--header {
@@ -58,8 +62,23 @@
 }
 
 .section--science {
-  background-color: #e74c3c;
-  height: 90vh;
+  background-color: #9b59b6;
+  height: 240vh;
+}
+
+.section--dopamine {
+  background-color: #f1c40f;
+
+}
+
+.section--willpower {
+  background-color: #1abc9c;
+
+}
+
+.section--comfort {
+  background-color: #2ecc71;
+
 }
 
 .section--future {

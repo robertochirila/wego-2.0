@@ -8,13 +8,13 @@ import TasksFeed from '../ui/TasksFeed';
 import YourProfile from '../ui/YourProfile';
 import YourStats from '../ui/YourStats';
 import AddTasks from '../ui/AddTasks';
-import ProjectsList from '../ui/ProjectsList';
+import Discover from '../ui/Discover';
 import DisplayUserProfile from '../ui/DisplayUserProfile';
 import createHistory from 'history/createBrowserHistory';
 
 const history = createHistory();
 const unauthenticatedPages = ['/', 'signup'];
-const authenticatedPages = ['/home', '/tasksfeed', '/yourprofile', '/yourstats', '/tasks'];
+const authenticatedPages = ['/home', '/tasksfeed', '/yourprofile', '/yourstats', '/tasks', '/discover'];
 
 const onEnterPublicPage = () => {
     if (Meteor.userId()) {
@@ -59,7 +59,7 @@ export const routes = (
             <Route exact path={'/yourprofile'} component={YourProfile} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/yourstats'} component={YourStats} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/tasks'} component={AddTasks} onEnter={onEnterPrivatePage()}/>
-            <Route exact path={'/projects'} component={ProjectsList} onEnter={onEnterPrivatePage()}/>
+            <Route exact path={'/discover'} component={Discover} onEnter={onEnterPrivatePage()}/>
             <Route exact path={'/displayUserProfile'} component={DisplayUserProfile} onEnter={onEnterPrivatePage()}/>
         </Switch>
     </BrowserRouter>

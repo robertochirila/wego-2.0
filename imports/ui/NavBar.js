@@ -22,6 +22,18 @@ export default class NavBar extends React.Component {
     }
 
     componentDidMount() {
+        $('.js--nav-icon').click(function () {
+            var nav = $('.js--main-nav');
+            var icon = $('.js--nav-icon i');
+            nav.slideToggle(200);
+            if (icon.hasClass('ion-navicon-round')) {
+                icon.removeClass('ion-navicon-round');
+                icon.addClass('ion-close-round');
+            } else {
+                icon.removeClass('ion-close-round');
+                icon.addClass('ion-navicon-round');
+            }
+        });
         let f1 = setTimeout(myFunc, 500);
         Meteor.subscribe('profiles');
         Meteor.subscribe('stats');
@@ -52,14 +64,15 @@ export default class NavBar extends React.Component {
         return (
             <nav>
                 <div className="navBar">
-                    <ul className="main--nav">
+                    <ul className="main--nav js--main-nav">
                         <li><Link to={"/home"}>Home</Link></li>
                         <li><Link to={"/tasksfeed"}>Tasks Feed</Link></li>
                         <li><Link to={"/yourprofile"}>Your Profile</Link></li>
                         <li><Link to={"/yourstats"}>Your Stats</Link></li>
                         <li><Link to={"/tasks"}>Tasks</Link></li>
-                        <li><Link to={"/projects"}>Discover</Link></li>
+                        <li><Link to={"/discover"}>Discover</Link></li>
                     </ul>
+                    <a class="mobile-nav-icon js--nav-icon"><i class="ion-close-round"></i></a>
                     <div className={'mini-stats'}>
                         {this.state.encourageName ?
                             <p className={'mini-stats-p'}><span
