@@ -1,0 +1,8 @@
+.profile--page {
+  background-image: linear-gradient(rgba(44, 62, 80, 0.5), rgba(44, 62, 80, 1)), url("../../img/background4.jpg");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  height: 100vh;
+  /*clip-path: polygon(0 0, 100% 0%, 100% 70%, 0 100%);*/
+}

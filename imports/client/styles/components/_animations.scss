@@ -1,0 +1,146 @@
+.moveDownAnimation-appear {
+  opacity: 0.01;
+}
+
+.moveDownAnimation-appear.moveDownAnimation-appear-active {
+  -webkit-animation-name: moveDown;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveDown {
+  0% {
+    opacity: 0;
+    /* from left to right */
+    transform: translateY(-15rem);
+  }
+  50% {
+    transform: translateY(+2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.moveUpAnimation-appear {
+  opacity: 0.01;
+}
+
+.moveUpAnimation-appear.moveUpAnimation-appear-active {
+  -webkit-animation-name: moveUp;
+  -webkit-animation-duration: 3s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveUp {
+  0% {
+    opacity: 0;
+    transform: translateY(+5rem);
+  }
+  50% {
+    transform: translateY(-2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.moveLeftAnimation-appear {
+  opacity: 0.01;
+}
+
+.moveLeftAnimation-appear.moveLeftAnimation-appear-active {
+  -webkit-animation-name: moveLeft;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(+10rem);
+  }
+  50% {
+    transform: translateX(-2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.opacityAnimation-appear {
+  opacity: 0.01;
+}
+
+.opacityAnimation-appear.opacityAnimation-appear-active {
+  -webkit-animation-name: opacityAnimation;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: linear;
+}
+
+@keyframes opacityAnimation {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.03);
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.moveRightAnimation-appear {
+  opacity: 0.01;
+}
+
+.moveRightAnimation-appear.moveRightAnimation-appear-active {
+  -webkit-animation-name: moveRight;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes moveRight {
+  0% {
+    opacity: 0;
+    transform: translateX(-10rem);
+  }
+  50% {
+    transform: translateX(+2rem);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+
+.rotateAnimation-appear {
+  opacity: 0.01;
+}
+
+.rotateAnimation-appear.rotateAnimation-appear-active {
+  -webkit-animation-name: rotate;
+  -webkit-animation-duration: 2s;
+  -webkit-animation-timing-function: ease-in-out;
+}
+
+@keyframes rotate {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    transform: rotateY(180deg);
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}

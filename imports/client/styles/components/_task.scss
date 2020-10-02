@@ -1,0 +1,43 @@
+.task--photo {
+  /*background-color: rgba(52, 152, 219, 1);*/
+  width: 90%;
+  margin: 2% 5%;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+#taskColumn {
+  background-color: #f1c40f;
+  border-radius: 10px;
+  box-shadow: 5px 10px $form-shadow;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in;
+  //background-image: linear-gradient(to right bottom, rgba(44, 62, 80, 0.3), rgba(44, 62, 80, 1)), url("./img/background3.jpg");
+  //background-position: center;
+  margin: 2% 7%;
+}
+
+.task--card {
+
+  background-color: rgba(52, 73, 94, 0.9) !important;
+  width: 90%;
+  margin-top: 40%;
+  border-radius: 10px;
+  box-shadow: 5px 10px $form-shadow;
+  transition: background-color 0.5s, color 0.5s, transform 0.5s ease-in;
+}
+
+.task--name--header {
+  color: #e74c3c;
+}
+
+#taskColumn:hover,
+#taskColumn:visited {
+  background-color: white;
+  color: black;
+  transform: scale(1.03);
+}
+
+.task--buttons--list {
+  list-style: none;
+  text-decoration: none;
+}

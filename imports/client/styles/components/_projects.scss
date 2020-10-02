@@ -1,0 +1,47 @@
+.project--photo {
+  /*background-color: rgba(52, 152, 219, 1);*/
+  width: 90%;
+  margin: 5% 5%;
+  display: inline-block;
+  border-radius: 5px;
+}
+
+.discover--header {
+  color: red;
+  text-align: center;
+
+}
+
+.project--header {
+  color: white;
+}
+
+.event {
+  color: white;
+}
+
+#projectColumn {
+  margin: 2% 5%;
+  background-color: #f1c40f;
+  border-radius: 10px;
+  box-shadow: 5px 10px $form-shadow;
+  transition: color 0.5s, background-color 0.5s, transform 0.5s ease;
+}
+
+.project--card {
+  background-color: rgba(52, 73, 94, 0.9);
+  width: 70%;
+  margin: 0 15%;
+
+}
+
+#projectColumn:hover,
+#projectColumn:visited {
+  background-color: white;
+  color: black;
+  transform: scale(1.03);
+}
+
+.project--description--header {
+  color: white;
+}

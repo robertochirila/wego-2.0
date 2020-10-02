@@ -1,0 +1,14 @@
+.task-feed-list {
+  list-style: none;
+}
+
+.task-feed-list-item {
+  background-color: $task-feed-list-item;
+  margin: 2% 2%;
+  padding: 3% 0;
+  border-radius: 25px;
+  font-family: $form-font;
+  font-weight: bold;
+  font-size: 120%;
+  color:white;
+}
